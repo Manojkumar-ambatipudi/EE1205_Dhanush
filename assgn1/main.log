@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.1.1)  3 JAN 2024 09:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.1.1)  3 JAN 2024 17:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1248,45 +1248,46 @@ Package hyperref Info: Link coloring OFF on input line 44.
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
-LaTeX Font Info:    Calculating math sizes for size <14> on input line 53.
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 55.
 LaTeX Font Info:    Trying to load font information for U+txsya on input line 5
-3.
+5.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+txsyb on input line 5
-3.
+5.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+txmia on input line 5
-3.
+5.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+txsyc on input line 5
-3.
+5.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for TS1+txr on input line 5
-3.
+5.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
 )
-Overfull \hbox (5.48615pt too wide) detected at line 84
+Overfull \hbox (39.74069pt too wide) detected at line 86
 [][][]\OT1/txr/m/n/12 1 \OMS/txsy/m/n/12 ^^B \OT1/txr/m/n/12 2[] + 2 \OMS/txsy/
 m/n/12 ^^B \OT1/txr/m/n/12 3[] + [] + \OML/txmi/m/it/12 n \OMS/txsy/m/n/12 ^^B 
-\OT1/txr/m/n/12 (\OML/txmi/m/it/12 n \OT1/txr/m/n/12 + 1)[] = []
+\OT1/txr/m/n/12 (\OML/txmi/m/it/12 n \OT1/txr/m/n/12 + 1)[] = [] = \OML/txmi/m/
+it/12 x\OT1/txr/m/n/12 [\OML/txmi/m/it/12 n\OT1/txr/m/n/12 ][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--90
+Underfull \hbox (badness 10000) in paragraph at lines 90--92
 
  []
 
@@ -1298,35 +1299,114 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.0.1}
 ) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.112 \end{document}
-                    
+l.114 \newpage
+              
 pdfTeX warning (ext4): destination with the same identifier (name{equation.0.1}
 ) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.112 \end{document}
-                    ] (./main.aux)
+l.114 \newpage
+              ]
+pdfTeX warning (ext4): destination with the same identifier (name{equation.0.1}
+) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.119 \begin{equation}
+                      
+pdfTeX warning (ext4): destination with the same identifier (name{equation.0.1}
+) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.119 \begin{equation}
+                      
+pdfTeX warning (ext4): destination with the same identifier (name{equation.0.1}
+) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.119 \begin{equation}
+                      
+pdfTeX warning (ext4): destination with the same identifier (name{equation.0.1}
+) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.119 \begin{equation}
+                      
+Underfull \hbox (badness 10000) in paragraph at lines 128--130
+
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.147 Therefore, the Z-transform of n\cdot
+                                           u[n] ,
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.148 
+      
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.154 ... n. Here,the z-transforms of \(n^i\)\cdot
+                                                   \(u[n]\) are denoted as \...
+
+? 
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.154 ... Here,the z-transforms of \(n^i\)\cdot \(
+                                                  u[n]\) are denoted as \(X_...
+
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
+
+ []
+
+[2
+pdfTeX warning (ext4): destination with the same identifier (name{equation.0.2}
+) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.187 \newpage
+              
+pdfTeX warning (ext4): destination with the same identifier (name{equation.0.8}
+) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.187 \newpage
+              ] [3
+
+] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30358 strings out of 476091
- 597847 string characters out of 5794082
- 1883330 words of memory out of 5000000
+ 30367 strings out of 476091
+ 597943 string characters out of 5794082
+ 1884330 words of memory out of 5000000
  50088 multiletter control sequences out of 15000+600000
  579292 words of font info for 176 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 101i,10n,96p,1172b,440s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,10n,96p,1172b,436s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
-tmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (1 page, 41748 bytes).
+e/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txf
+onts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (3 pages, 53106 bytes).
 PDF statistics:
- 48 PDF objects out of 1000 (max. 8388607)
- 32 compressed objects within 1 object stream
- 3 named destinations out of 1000 (max. 500000)
+ 70 PDF objects out of 1000 (max. 8388607)
+ 50 compressed objects within 1 object stream
+ 12 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
