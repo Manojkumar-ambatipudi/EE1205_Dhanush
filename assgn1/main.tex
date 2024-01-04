@@ -64,7 +64,8 @@
     \frac{1\times2^2 + 2\times3^2 + \dots + n\times(n+1)^2}{1^2\times2 + 2^2\times3 +\dots + n^2\times(n+1)} \notag = \frac{3n+5}{3n+1}
 \end{equation}\\
 \textbf{Solution:}\\
-Consider the Numerator of the LHS part:
+\begin{enumerate}[label=\alph*)]
+\item Consider the Numerator of the LHS part:
 \begin{equation}
     1\times2^2 + 2\times3^2 + \dots + n\times(n+1)^2 = \sum_{k=1}^n k(k+1)^2 \notag
 \end{equation}
@@ -82,9 +83,12 @@ Now,
 \end{align*}
 Therefore,
 \begin{equation}
-   1\times2^2 + 2\times3^2 + \dots + n\times(n+1)^2 = \frac{n(n+1)(n+2)(3n+5)}{12} = x[n] \\\notag 
+   1\times2^2 + 2\times3^2 + \dots + n\times(n+1)^2 = \frac{n(n+1)(n+2)(3n+5)}{12}  \notag \\
 \end{equation}
-Consider the Denominator of the RHS part:
+\begin{align*}
+    \frac{n(n+1)(n+2)(3n+5)}{12}\cdot u[n] = x[n]\notag 
+\end{align*}
+\item Consider the Denominator of the RHS part:
 \begin{equation*}
     1^2\times2 + 2^2\times3 +\dots + n^2\times(n+1) = \sum_{k=1}^n k^2(k+1)
 \end{equation*}
@@ -100,7 +104,7 @@ Now,\\
                            &= \frac{n(n+1)(n+2)(3n+1)}{12}
 \end{align*}
 \begin{align*}
-    \frac{n(n+1)(n+2)(3n+1)}{12} &= y[n]
+    \frac{n(n+1)(n+2)(3n+1)}{12}\cdot u[n] &= y[n]
 \end{align*}
 \vspace{1cm}
 Therefore,
@@ -112,22 +116,23 @@ Therefore,
 
 
 \newpage
+
+    \item Derivation of z-transform of numerator :
 \begin{align*}
-    x[n] &= \frac{n(n+1)(n+2)(3n+5)}{12}\\
-         &= \frac{3n^4 + 14n^3 + 21n^2 + 10n}{12}\
+    x[n] &= \frac{n(n+1)(n+2)(3n+5)}{12}\cdot u[n]\\
+         &= \frac{3n^4 + 14n^3 + 21n^2 + 10n}{12}\cdot u[n]\
 \end{align*}
 \begin{equation}
     X(z) = \sum_{n=-\infty}^\infty x[n]z^{-n}
 \end{equation}
-But as n is the number of terms here Z-Transform is calculated as:
+Z-Transform is calculated as:
 \begin{equation}
-    X(z) = \sum_{n=1}^\infty x[n]\cdot z^{-n} \hspace{5pt} or \hspace{5pt}   X(z) = \sum_{n=-\infty}^\infty x[n]\cdot u[n]\cdot z^{-n}\notag
+    X(z) = \sum_{n=-\infty}^\infty x[n]\cdot z^{-n}\notag
 \end{equation}
 \begin{align}
-    12X(z) &= \sum_{n=1}^\infty 3n^4z^{-n} +  \sum_{n=1}^\infty 14n^3z^{-n} +  \sum_{n=1}^\infty 21n^2 z^{-n}\\   &+\sum_{n=1}^\infty 10nz^{-n}\notag
+    12X(z) &= \sum_{n=0}^\infty 3n^4u[n]z^{-n} +  \sum_{n=0}^\infty 14n^3u[n]z^{-n} \\ &+  \sum_{n=0}^\infty 21n^2u[n] z^{-n} +\sum_{n=0}^\infty 10nu[n]\hspace{3pt} z^{-n}\notag
 \end{align}
-\text{Let $X_0(z)$ be z transform of $x[n]=u[n]$.}\\
-
+\text{Let $X_0(z)$ be z transform of $x[n]=u[n]$.}
     \begin{align*}
 X_0(z) &= \sum_{n=0}^{\infty} u[n]\cdot z^{-n} \\
      &= \sum_{n=0}^{\infty} (1) \cdot z^{-n} \\
@@ -166,32 +171,31 @@ Equation(2) can be now written as:\\
          + \frac{21}{12}\left(\frac{z^{-1}(z^{-1}+1)}{(1-z^{-1})^3}\right)\\ &+ \frac{10}{12}\left(\frac{z}{(z - 1)^2}\right) \\
          &= \frac{2(z^{-2}+2z^{-1})}{(1-z^{-1})^5}
 \end{align*}
-Now,
+
+\item Derivation of z-transform of the denominator:
 \begin{align*}
-    y[n] &= \frac{n(n+1)(n+2)(3n+1)}{12}\\
-         &= \frac{3n^4 + 10n^3 + 9n^2 + 2n}{12}\
+    y[n] &= \frac{n(n+1)(n+2)(3n+1)}{12}\cdot u[n]\\
+         &= \frac{3n^4 + 10n^3 + 9n^2 + 2n}{12}\cdot u[n]\
 \end{align*}
+
 \begin{equation}
-    Y(z) = \sum_{n=-\infty}^\infty \frac{y[n]}{12}z^{-n}
+    Y(z) = \sum_{n=-\infty}^\infty y[n]\cdot z^{-n}
 \end{equation}
-But as n is the number of terms here Z-Transform is calculated as:
-\begin{equation}
-    Y(z) = \sum_{n=1}^\infty y[n]\cdot z^{-n} \hspace{5pt} or \hspace{5pt}   Y(z) = \sum_{n=-\infty}^\infty y[n]\cdot u[n]\cdot z^{-n}\notag
-\end{equation}
+Z-Transform is calculated as:
 \begin{align}
-    12Y(z) &= \sum_{n=1}^\infty 3n^4z^{-n} +  \sum_{n=1}^\infty 10n^3z^{-n} +  \sum_{n=1}^\infty 9n^2 z^{-n}\\   &+\sum_{n=1}^\infty 2nz^{-n}\notag
+    12Y(z) &= \sum_{n=0}^\infty 3n^4u[n]z^{-n} +  \sum_{n=0}^\infty 10n^3u[n]z^{-n}\\ &+  \sum_{n=0}^\infty 9n^2u[n] z^{-n} +\sum_{n=0}^\infty 2n\hspace{3pt}u[n]z^{-n}\notag
 \end{align}
-We can say that $Y_i$ denote the z-transform of $n^{i}$ which will be same as respective $X_i$ 
+We can say that $Y_i$ denote the z-transform of $n^{i}$ which will be same as respective $X_i$.
 
 $$X_i=Y_i$$
 \newpage
-And,
+Equation(8) can be now written as:
 \begin{align*}
     Y(z) &=\frac{1}{12}(3Y_4(z) + 10Y_3(z) + 9Y_2(z) + 2Y_1(z)) \\
          &= \frac{3}{12}\left(\frac{z^{-1}(1+11z^{-1}+11z^{-2}+z^{-3})}{(1-z^{-1})^5}\right)\\ &+ \frac{10}{12}\left(\frac{z^{-1}(1+4z^{-1}+z^{-2})}{(1-z^{-1})^4}\right) 
          + \frac{9}{12}\left(\frac{z^{-1}(z^{-1}+1)}{(1-z^{-1})^3}\right)\\ &+ \frac{2}{12}\left(\frac{z}{(z - 1)^2}\right) \\
          &= \frac{2(z^{-1}+2z^{-2})}{(1-z^{-1})^5}
 \end{align*}
-
+\end{enumerate}
 \end{document}
 
