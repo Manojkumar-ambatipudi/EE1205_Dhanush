@@ -88,6 +88,11 @@ Therefore,
 \begin{align}
     \frac{n(n+1)(n+2)(3n+5)}{12}\cdot u[n] = x[n]
 \end{align}
+\begin{figure}[h]
+        \includegraphics[width=\columnwidth]{Figure_1.png}
+        \caption{Stem Plot of x[n]}
+    \end{figure}
+    
 Derivation of z-transform of numerator :
 \begin{align}
     x[n] &= \frac{n(n+1)(n+2)(3n+5)}{12}\cdot u[n]\\
@@ -100,32 +105,42 @@ Z-Transform is calculated as:
 \begin{equation}
     X(z) = \sum_{n=-\infty}^\infty x[n]\cdot z^{-n}
 \end{equation}
-\begin{align}\label{eq:3}
-    12X(z) &= \sum_{n=0}^\infty 3n^4u[n]z^{-n} +  \sum_{n=0}^\infty 14n^3u[n]z^{-n} \\ &+  \sum_{n=0}^\infty 21n^2u[n] z^{-n} +\sum_{n=0}^\infty 10nu[n]\hspace{3pt} z^{-n}\notag
+\begin{align}
+    X(z) &= \sum_{n=-\infty}^\infty\frac{3n^4 + 14n^3 + 21^2 + 10n}{12}
 \end{align}
-\text{Let $U(z)$ be z transform of $x[n]=u[n]$.}
+\begin{align}\label{eq:3}
+    12X(z) &= \sum_{n=0}^\infty 3n^4z^{-n} +  \sum_{n=0}^\infty 14n^3z^{-n} \\ &+  \sum_{n=0}^\infty 21n^2 z^{-n} +\sum_{n=0}^\infty 10n\hspace{3pt} z^{-n}\notag
+\end{align}
+\text{Let $U(z)$ be z transform of $u[n]$.}
     \begin{align}
 U(z) &= \sum_{n=0}^{\infty} u[n]\cdot z^{-n} \\
      &= \sum_{n=0}^{\infty} (1) \cdot z^{-n} \\
      &= 1 + z^{-1} + z^{-2} + \ldots \\
-     &= \frac{1}{1 - z^{-1}} \\
-     &= \frac{z}{z - 1}
+     &= \frac{1}{1 - z^{-1}} 
 \end{align}
 
 By the differentiation property:\\
-Here , x[n]=u[n] and $X(z) = U(z)$
 \begin{align}
-n x[n] &\stackrel{\mathcal{Z}}{\longleftrightarrow} -z \frac{dX(z)}{dz}, \\
-n u[n] &\stackrel{\mathcal{Z}}{\longleftrightarrow} -z \frac{dX(z)}{dz}, \\
-\frac{dX(z)}{dz} &= -\frac{1}{(z - 1)^2}, \\
-n u(n) &\stackrel{\mathcal{Z}}{\longleftrightarrow} \frac{z}{(z - 1)^2}.
+x[n] &\stackrel{\mathcal{Z}}{\longleftrightarrow} X(z)\\
+n^k x[n] &\stackrel{\mathcal{Z}}{\longleftrightarrow} (-z)^k \frac{d^kX(z)}{dz^k}\\
+n^k u[n] &\stackrel{\mathcal{Z}}{\longleftrightarrow} (-z)^k \frac{d^kU(z)}{dz^k} \label{eq:24}
 \end{align}
 
-Therefore, the Z-transform of n\cdot u[n] ,
+\text{For the Z-transform of n \cdot u[n],}\\
 
+\text{ substituting } k=1 \text{ in Equation \eqref{eq:24}:}
 \begin{align}
-    X_1(z) = \frac{z^{-1}}{(1-z^{-1})^2}.
+    n \cdot u[n] &\stackrel{\mathcal{Z}}{\longleftrightarrow} -z \frac{dX(z)}{dz}\\
+    \frac{dX(z)}{dz} &= -\frac{1}{(z - 1)^2}, \\
+    X_1(z) &= \frac{z^{-1}}{(1-z^{-1})^2}.
 \end{align}
+\text{Substituting } k=2,3,4:
+\begin{align}
+     X_2(z) &= \frac{z^{-1}(z^{-1}+1)}{(1-z^{-1})^3}\\
+     X_3(z) &= \frac{z^{-1}(1+4z^{-1}+z^{-2})}{(1-z^{-1})^4}\\
+    X_4(z) &= \frac{z^{-1}(1+11z^{-1}+11z^{-2}+z^{-3})}{(1-z^{-1})^5} 
+\end{align}
+
 The Region of Convergence (ROC) is defined as the set of points in the complex plane for which the Z-transform summation converges, i.e., doesn't blow up in magnitude to infinity:
 The Region of Convergence (ROC) is defined as:
 \begin{equation}\label{eq:roc_definition}
@@ -146,7 +161,7 @@ Since \(u[n] = 1\) for \(n \geq 0\) and \(u[n] = 0\) for \(n < 0\), the summatio
 \begin{equation}
     \text{ROC} = \left\{ z : \left| \sum_{n=0}^{\infty} z^{-n} \right| < \infty \right\}
 \end{equation}
-This is an infinite GP. And it converges only if $|r|<1$ .And here , $|r|=|z^{-1}|$ Therefore,
+This is an infinite GP. And it converges only if $|r|<1$ where r is the common ratio.And here , $|r|=|z^{-1}|$ Therefore,
 the Region of Convergence (ROC) for this Z-transform is:
 \begin{equation}\label{eq:roc}
     \text{ROC: } |z| > 1
@@ -154,7 +169,7 @@ the Region of Convergence (ROC) for this Z-transform is:
 In the differentiation property, ROC does not change:\\
 \begin{align}
 x[n] &\stackrel{\mathcal{Z}}{\longleftrightarrow} X(z),\hspace{4pt} ROC = R\\
-n x[n] &\stackrel{\mathcal{Z}}{\longleftrightarrow} -z \frac{dX(z)}{dz},\hspace{4pt} ROC = R 
+n^k x[n] &\stackrel{\mathcal{Z}}{\longleftrightarrow} (-z)^k \frac{d^kX(z)}{dz^k},\hspace{4pt} ROC = R 
 \end{align}
 Therefore,
 \begin{align}
@@ -176,8 +191,7 @@ Consider the linear combination of two signals in the time domain:
     a_1 x_1(n) + a_2 x_2(n) &= a_1 X_1(z) + a_2 X_2(z) \label{eq:combined_signal}\\
     \text{ROC} &= \text{ROC}_1 \cap \text{ROC}_2 \label{eq:roc_intersection}
 \end{align}
-\vspace{1.5pt}
-Therefore, ROC of equation\eqref{eq:3} is intersection of ROC of each signal. Every signal has ROC $|z|>1$.So,\\
+Therefore, ROC of equation\eqref{eq:3} is the intersection of the ROC of each signal. Every signal has ROC $|z|>1$. So,
 \begin{align}
     \text{ROC of $X(z)$} \text{\hspace{3pt}is\hspace{3pt}} |z|>1
 \end{align}
@@ -199,13 +213,17 @@ Now,\\
 \begin{align}
     \frac{n(n+1)(n+2)(3n+1)}{12}\cdot u[n] &= y[n]
 \end{align}
+\begin{figure}[h]
+        \includegraphics[width=\columnwidth]{Figure_2.png}
+        \caption{Stem Plot of y[n]}
+    \end{figure}
 \vspace{1cm}
-Therefore,
+
+The Ncert question result is proved,
 \begin{align}
      \dfrac{ \sum_{k=1}^n k(k+1)^2 }{\sum_{k=1}^n k^2(k+1)} &= \dfrac{\frac{n(n+1)(n+2)(3n+5)}{12}}{\frac{n(n+1)(n+2)(3n+1)}{12}}\\
                                                             &= \frac{3n+5}{3n+1}
 \end{align}
-\vspace{0.7cm}
 
 Derivation of z-transform of the denominator:
 \begin{align}
@@ -218,7 +236,8 @@ Derivation of z-transform of the denominator:
 \end{equation}
 Z-Transform is calculated as:
 \begin{align}\label{eq:9}
-    12Y(z) &= \sum_{n=0}^\infty 3n^4u[n]z^{-n} +  \sum_{n=0}^\infty 10n^3u[n]z^{-n}\\ &+  \sum_{n=0}^\infty 9n^2u[n] z^{-n} +\sum_{n=0}^\infty 2n\hspace{3pt}u[n]z^{-n}\notag
+    Y(z) &= \sum_{n=-\infty}^\infty\frac{3n^4 + 10n^3 + 9n^2 + 2n}{12}\\
+    12Y(z) &= \sum_{n=0}^\infty 3n^4z^{-n} +  \sum_{n=0}^\infty 10n^3z^{-n}\\ &+  \sum_{n=0}^\infty 9n^2 z^{-n} +\sum_{n=0}^\infty 2n\hspace{3pt}z^{-n}\notag
 \end{align}
 We can say that $Y_i$ denote the z-transform of $n^{i}$ which will be same as respective $X_i$.
 \begin{align}\label{eq:61}
