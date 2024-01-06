@@ -8,6 +8,7 @@
 \usepackage{graphicx}
 \usepackage{textcomp}
 \usepackage{xcolor}
+\usepackage{caption}
 \usepackage{txfonts}
 \usepackage{listings}
 \usepackage{enumitem}
@@ -61,203 +62,215 @@
 \bibliographystyle{IEEEtran}
 \textbf{Question:} Show that
 \begin{equation}
-    \frac{1\times2^2 + 2\times3^2 + \dots + n\times(n+1)^2}{1^2\times2 + 2^2\times3 +\dots + n^2\times(n+1)}  = \frac{3n+5}{3n+1}\notag
+    \frac{1\times2^2 + 2\times3^2 + \dots + n\times\brak{n+1}^2}{1^2\times2 + 2^2\times3 +\dots + n^2\times\brak{n+1}}  = \frac{3n+5}{3n+1}\notag
 \end{equation}\\
 \textbf{Solution:}\\
-\begin{enumerate}[label=\alph*)]
+
+\begin{enumerate}
 \item Consider the Numerator of the LHS part:
 \begin{equation}
-    1\times2^2 + 2\times3^2 + \dots + n\times(n+1)^2 = \sum_{k=1}^n k(k+1)^2 
+    1\times2^2 + 2\times3^2 + \dots + n\times\brak{n+1}^2 = \sum_{k=1}^n k\brak{k+1}^2 
 \end{equation}
 Now,
 \begin{align}
-    \sum_{k=1}^n k(k+1)^2 &= \sum_{k=1}^n k^3+2k^2+k\\
+    \sum_{k=1}^n k\brak{k+1}^2 &= \sum_{k=1}^n k^3+2k^2+k\\
                           &=  \sum_{k=1}^n k^3 + \sum_{k=1}^n 2k^2 + \sum_{k=1}^n k\\
                           &=  \sum_{k=1}^n k^3 + 2\sum_{k=1}^n k^2 + \sum_{k=1}^n k\\
-                          &= \left(\frac{n(n+1)}{2}\right)^{\scriptstyle 2} + 2\cdot \frac{n(n+1)(2n+1)}{6}+\\  &+\frac{n(n+1)}{2}\notag \\
-                          &= \frac{n(n+1)}{2}\left[\frac{n(n+1)}{2} + \frac{2}{3}(2n+1) + 1\right]\\
-                          &= \frac{n(n+1)}{2}\left[\frac{3n^2 + 11n +10}{6}\right]\\
-                          &= \frac{n(n+1)}{12}\left[3n^2 + 6n + 5n + 10\right]\\
-                          &= \frac{n(n+1)}{12}\left[3n(n+2)+5(n+2)\right]\\
-                          &= \frac{n(n+1)(n+2)(3n+5)}{12}
+                          &= \left(\frac{n\brak{n+1}}{2}\right)^{\scriptstyle 2} + 2\cdot \frac{n\brak{n+1}\brak{2n+1}}{6}\\  &+\frac{n\brak{n+1}}{2}\notag \\
+                          &= \frac{n\brak{n+1}}{2}\left[\frac{n\brak{n+1}}{2} + \frac{2}{3}\brak{2n+1} + 1\right]\\
+                          &= \frac{n\brak{n+1}}{2}\left[\frac{3n^2 + 11n +10}{6}\right]\\
+                          &= \frac{n\brak{n+1}}{12}\left[3n^2 + 6n + 5n + 10\right]\\
+                          &= \frac{n\brak{n+1}}{12}\left[3n\brak{n+2}+5\brak{n+2}\right]\\
+                          &= \frac{n\brak{n+1}\brak{n+2}\brak{3n+5}}{12}
 \end{align}
 Therefore,
 \begin{equation}
-   1\times2^2 + 2\times3^2 + \dots + n\times(n+1)^2 = \frac{n(n+1)(n+2)(3n+5)}{12}   \\
+   1\times2^2 + 2\times3^2 + \dots + n\times\brak{n+1}^2 = \frac{n\brak{n+1}\brak{n+2}\brak{3n+5}}{12}   \\
 \end{equation}
 \begin{align}
-    \frac{n(n+1)(n+2)(3n+5)}{12}\cdot u[n] = x[n]
+    \frac{n\brak{n+1}\brak{n+2}\brak{3n+5}}{12}\cdot u\brak{n} &= x\brak{n}
+    \end{align}
+\begin{align}
+     x\brak{n} & = \begin{cases}
+        0 & \text{for } n < 0 \\
+        \frac{n\brak{n+1}\brak{n+2}\brak{3n+5}}{12}\cdot& \text{for } n \geq 0
+    \end{cases}
 \end{align}
 \begin{figure}[h]
-        \includegraphics[width=\columnwidth]{Figure_1.png}
-        \caption{Stem Plot of x[n]}
-    \end{figure}
+    \hspace{1cm}
+    \includegraphics[width=1\columnwidth]{Figure_1.png}
+    \caption{Stem Plot of $x\brak{n}$}
+\end{figure}
     
 Derivation of z-transform of numerator :
 \begin{align}
-    x[n] &= \frac{n(n+1)(n+2)(3n+5)}{12}\cdot u[n]\\
-         &= \frac{3n^4 + 14n^3 + 21n^2 + 10n}{12}\cdot u[n]\
+    x\brak{n} &= \frac{n\brak{n+1}\brak{n+2}\brak{3n+5}}{12}\cdot u\brak{n}\\
+         &= \frac{3n^4 + 14n^3 + 21n^2 + 10n}{12}\cdot u\brak{n}\
 \end{align}
 \begin{equation}
-    X(z) = \sum_{n=-\infty}^\infty x[n]z^{-n}
+    X\brak{z} = \sum_{n=-\infty}^\infty x\brak{n}z^{-n}
 \end{equation}
-Z-Transform is calculated as:
-\begin{equation}
-    X(z) = \sum_{n=-\infty}^\infty x[n]\cdot z^{-n}
-\end{equation}
-\begin{align}
-    X(z) &= \sum_{n=-\infty}^\infty\frac{3n^4 + 14n^3 + 21^2 + 10n}{12}
-\end{align}
-\begin{align}\label{eq:3}
-    12X(z) &= \sum_{n=0}^\infty 3n^4z^{-n} +  \sum_{n=0}^\infty 14n^3z^{-n} \\ &+  \sum_{n=0}^\infty 21n^2 z^{-n} +\sum_{n=0}^\infty 10n\hspace{3pt} z^{-n}\notag
-\end{align}
-\text{Let $U(z)$ be z transform of $u[n]$.}
     \begin{align}
-U(z) &= \sum_{n=0}^{\infty} u[n]\cdot z^{-n} \\
-     &= \sum_{n=0}^{\infty} (1) \cdot z^{-n} \\
+U\brak{z} &= \sum_{n=-\infty}^{\infty} u\brak{n}\cdot z^{-n} \\
+     &= \sum_{n=0}^{\infty} \brak{1} \cdot z^{-n} \\
      &= 1 + z^{-1} + z^{-2} + \ldots \\
      &= \frac{1}{1 - z^{-1}} 
 \end{align}
 
 By the differentiation property:\\
 \begin{align}
-x[n] &\stackrel{\mathcal{Z}}{\longleftrightarrow} X(z)\\
-n^k x[n] &\stackrel{\mathcal{Z}}{\longleftrightarrow} (-z)^k \frac{d^kX(z)}{dz^k}\\
-n^k u[n] &\stackrel{\mathcal{Z}}{\longleftrightarrow} (-z)^k \frac{d^kU(z)}{dz^k} \label{eq:24}
+x\brak{n} &\stackrel{\mathcal{Z}}{\longleftrightarrow} X\brak{z}\\
+n^k x\brak{n} &\stackrel{\mathcal{Z}}{\longleftrightarrow} \brak{-z}^k \frac{d^kX\brak{z}}{dz^k}\\
+n^k u\brak{n} &\stackrel{\mathcal{Z}}{\longleftrightarrow} \brak{-z}^k \frac{d^kU\brak{z}}{dz^k}
 \end{align}
-
-\text{For the Z-transform of n \cdot u[n],}\\
-
-\text{ substituting } k=1 \text{ in Equation \eqref{eq:24}:}
+\begin{align} \label{eq:a}
+    X_k\brak{z} =  \brak{-z}^k \frac{d^kU\brak{z}}{dz^k}
+\end{align}
+For the Z-transform of $n \cdot u\brak{n}$, 
+\text{ substituting } k=1 \text{ in Equation \eqref{eq:a}:}
 \begin{align}
-    n \cdot u[n] &\stackrel{\mathcal{Z}}{\longleftrightarrow} -z \frac{dX(z)}{dz}\\
-    \frac{dX(z)}{dz} &= -\frac{1}{(z - 1)^2}, \\
-    X_1(z) &= \frac{z^{-1}}{(1-z^{-1})^2}.
+    X_1\brak{z} &=  \brak{-z} \frac{dU\brak{z}}{dz}\\
+    \frac{dU\brak{z}}{dz} &= -\frac{z^{-2}}{\brak{1-z^{-1}}^2}, \\
+    X_1\brak{z} &= \frac{z^{-1}}{\brak{1-z^{-1}}^2}.
 \end{align}
-\text{Substituting } k=2,3,4:
+\text{Similarly , substituting } k=2,3,4 in equation \eqref{eq:a}:
 \begin{align}
-     X_2(z) &= \frac{z^{-1}(z^{-1}+1)}{(1-z^{-1})^3}\\
-     X_3(z) &= \frac{z^{-1}(1+4z^{-1}+z^{-2})}{(1-z^{-1})^4}\\
-    X_4(z) &= \frac{z^{-1}(1+11z^{-1}+11z^{-2}+z^{-3})}{(1-z^{-1})^5} 
+     X_2\brak{z} &= \frac{z^{-1}\brak{z^{-1}+1}}{\brak{1-z^{-1}}^3}\\
+     X_3\brak{z} &= \frac{z^{-1}\brak{1+4z^{-1}+z^{-2}}}{\brak{1-z^{-1}}^4}\\
+    X_4\brak{z} &= \frac{z^{-1}\brak{1+11z^{-1}+11z^{-2}+z^{-3}}}{\brak{1-z^{-1}}^5} 
 \end{align}
-
-The Region of Convergence (ROC) is defined as the set of points in the complex plane for which the Z-transform summation converges, i.e., doesn't blow up in magnitude to infinity:
-The Region of Convergence (ROC) is defined as:
+The Region of Convergence \brak{ROC} is defined as the set of points in the complex plane for which the Z-transform summation converges, i.e., doesn't blow up in magnitude to infinity:
+The Region of Convergence \brak{ROC} is defined as:
 \begin{equation}\label{eq:roc_definition}
-    \text{ROC} = \left\{ z : \left| \sum_{n=-\infty}^{\infty} x[n]z^{-n} \right| < \infty \right\}
+    \text{ROC} = \left\{ z : \left| \sum_{n=-\infty}^{\infty} x\brak{n}z^{-n} \right| < \infty \right\}
 \end{equation}
 
 Equation \eqref{eq:roc_definition} expresses the set of points in the complex plane for which the Z-transform summation converges.
 
-The Z-transform of the unit step signal \(u[n]\) is given by:
+The Z-transform of the unit step signal $u\brak{n}$ is given by:
 \begin{equation}\label{eq:z_transform}
-    U(z) = \sum_{n=-\infty}^{\infty} u[n] z^{-n}
+    U\brak{z} = \sum_{n=-\infty}^{\infty} u\brak{n} z^{-n}
 \end{equation}
-
-Since \(u[n] = 1\) for \(n \geq 0\) and \(u[n] = 0\) for \(n < 0\), the summation simplifies to:
-\begin{equation}\label{eq:z_transform_simplified}
-    U(z) = \sum_{n=0}^{\infty} z^{-n}
-\end{equation}
+\begin{align}
+    u(n) = \begin{cases}
+        0 & \text{for } n < 0 \\
+        1 & \text{for } n \geq 0\\
+    \end{cases}
+\end{align}
+\begin{align}
+    U\brak{z} = \sum_{n=0}^{\infty} z^{-n}\label{eq:z_transform_simplified}
+\end{align}
 \begin{equation}
     \text{ROC} = \left\{ z : \left| \sum_{n=0}^{\infty} z^{-n} \right| < \infty \right\}
 \end{equation}
 This is an infinite GP. And it converges only if $|r|<1$ where r is the common ratio.And here , $|r|=|z^{-1}|$ Therefore,
-the Region of Convergence (ROC) for this Z-transform is:
+the Region of Convergence \brak{ROC} for this Z-transform is:
 \begin{equation}\label{eq:roc}
     \text{ROC: } |z| > 1
 \end{equation}
 In the differentiation property, ROC does not change:\\
 \begin{align}
-x[n] &\stackrel{\mathcal{Z}}{\longleftrightarrow} X(z),\hspace{4pt} ROC = R\\
-n^k x[n] &\stackrel{\mathcal{Z}}{\longleftrightarrow} (-z)^k \frac{d^kX(z)}{dz^k},\hspace{4pt} ROC = R 
+x\brak{n} &\stackrel{\mathcal{Z}}{\longleftrightarrow} X\brak{z},\hspace{4pt} ROC = R\\
+n^k x\brak{n} &\stackrel{\mathcal{Z}}{\longleftrightarrow} \brak{-z}^k \frac{d^kX\brak{z}}{dz^k},\hspace{4pt} ROC = R 
 \end{align}
 Therefore,
 \begin{align}
-    X_1(z) &= \frac{z^{-1}}{(1-z^{-1})^2} , \hspace{4pt} ROC=|z|>1\\
-    X_2(z) &= \frac{z^{-1}(z^{-1}+1)}{(1-z^{-1})^3} , \hspace{4pt} ROC=|z|>1\\
-    X_3(z) &= \frac{z^{-1}(1+4z^{-1}+z^{-2})}{(1-z^{-1})^4}, \hspace{4pt} ROC=|z|>1\\
-    X_4(z) &= \frac{z^{-1}(1+11z^{-1}+11z^{-2}+z^{-3})}{(1-z^{-1})^5}, \hspace{4pt} ROC=|z|>1
+    X_1\brak{z} &= \frac{z^{-1}}{\brak{1-z^{-1}}^2} , \hspace{4pt} ROC=|z|>1\\
+    X_2\brak{z} &= \frac{z^{-1}\brak{z^{-1}+1}}{\brak{1-z^{-1}}^3} , \hspace{4pt} ROC=|z|>1\\
+    X_3\brak{z} &= \frac{z^{-1}\brak{1+4z^{-1}+z^{-2}}}{\brak{1-z^{-1}}^4}, \hspace{4pt} ROC=|z|>1\\
+    X_4\brak{z} &= \frac{z^{-1}\brak{1+11z^{-1}+11z^{-2}+z^{-3}}}{\brak{1-z^{-1}}^5}, \hspace{4pt} ROC=|z|>1
 \end{align}
-Equation\eqref{eq:3} can be now written as:
 \begin{align}
-    X(z) &=\frac{1}{12}(3X_4(z) + 14X_3(z) + 21X_2(z) + 10X_1(z)) \\
-         &= \frac{3}{12}\left(\frac{z^{-1}(1+11z^{-1}+11z^{-2}+z^{-3})}{(1-z^{-1})^5}\right)\\ &+ \frac{14}{12}\left(\frac{z^{-1}(1+4z^{-1}+z^{-2})}{(1-z^{-1})^4}\right) 
-         + \frac{21}{12}\left(\frac{z^{-1}(z^{-1}+1)}{(1-z^{-1})^3}\right)\notag \\ &+ \frac{10}{12}\left(\frac{z^{-1}}{(1-z^{-1})^2}.\right)\notag \\
-         &= \frac{2(z^{-2}+2z^{-1})}{(1-z^{-1})^5}
+    X\brak{z} &=\frac{1}{12}\brak{3X_4\brak{z} + 14X_3\brak{z} + 21X_2\brak{z} + 10X_1\brak{z}}\label{eq:com} \\
+         &= \frac{3}{12}\left(\frac{z^{-1}\brak{1+11z^{-1}+11z^{-2}+z^{-3}}}{\brak{1-z^{-1}}^5}\right)\\ &+ \frac{14}{12}\left(\frac{z^{-1}\brak{1+4z^{-1}+z^{-2}}}{\brak{1-z^{-1}}^4}\right) 
+         + \frac{21}{12}\left(\frac{z^{-1}\brak{z^{-1}+1}}{\brak{1-z^{-1}}^3}\right)\notag \\ &+ \frac{10}{12}\left(\frac{z^{-1}}{\brak{1-z^{-1}}^2}.\right)\notag \\
+         &= \frac{2\brak{z^{-2}+2z^{-1}}}{\brak{1-z^{-1}}^5}
 \end{align}
-
 Consider the linear combination of two signals in the time domain:
 \begin{align}
-    a_1 x_1(n) + a_2 x_2(n) &= a_1 X_1(z) + a_2 X_2(z) \label{eq:combined_signal}\\
+    a_1 x_1\brak{n} + a_2 x_2\brak{n} &\stackrel{\mathcal{Z}}{\longleftrightarrow} a_1 X_1\brak{z} + a_2 X_2\brak{z} \label{eq:combined_signal}\\
     \text{ROC} &= \text{ROC}_1 \cap \text{ROC}_2 \label{eq:roc_intersection}
 \end{align}
-Therefore, ROC of equation\eqref{eq:3} is the intersection of the ROC of each signal. Every signal has ROC $|z|>1$. So,
+Therefore, ROC of equation\eqref{eq:com} is the intersection of the ROC of each signal. Every signal has ROC $|z|>1$. So,
 \begin{align}
-    \text{ROC of $X(z)$} \text{\hspace{3pt}is\hspace{3pt}} |z|>1
+    \text{ROC of $X\brak{z}$} \text{\hspace{3pt}is\hspace{3pt}} |z|>1
 \end{align}
-  \item Consider the Denominator of the RHS part:
+
+\item Consider the Denominator of the RHS part:
 \begin{equation}
-    1^2\times2 + 2^2\times3 +\dots + n^2\times(n+1) = \sum_{k=1}^n k^2(k+1)
+    1^2\times2 + 2^2\times3 +\dots + n^2\times\brak{n+1} = \sum_{k=1}^n k^2\brak{k+1}
 \end{equation}
-Now,\\
+Now,
 \begin{align}
-     \sum_{k=1}^n k^2(k+1) &= \sum_{k=1}^n k^3+k^2\\
+     \sum_{k=1}^n k^2\brak{k+1} &= \sum_{k=1}^n k^3+k^2\\
                            &=  \sum_{k=1}^n k^3 + \sum_{k=1}^n k^2\\
-                           &=  \left(\frac{n(n+1)}{2}\right)^{\scriptstyle 2}+\frac{n(n+1)(2n+1)}{6}\\ 
-                           &= \frac{n(n+1)}{2}\left[\frac{n(n+1)}{2} +\frac{2n+1}{3}\right]\\
-                           &= \frac{n(n+1)}{2}\left[\frac{3n^2+7n+2}{6}\right]\\
-                           &= \frac{n(n+1)}{12}\left[3n^2+6n + n+2\right]\\
-                           &= \frac{n(n+1)}{12}\left[3n(n+2)+(n+2)\right]\\
-                           &= \frac{n(n+1)(n+2)(3n+1)}{12}
+                           &=  \left(\frac{n\brak{n+1}}{2}\right)^{\scriptstyle 2}+\frac{n\brak{n+1}\brak{2n+1}}{6}\\ 
+                           &= \frac{n\brak{n+1}}{2}\left[\frac{n\brak{n+1}}{2} +\frac{2n+1}{3}\right]\\
+                           &= \frac{n\brak{n+1}}{2}\left[\frac{3n^2+7n+2}{6}\right]\\
+                           &= \frac{n\brak{n+1}}{12}\left[3n^2+6n + n+2\right]\\
+                           &= \frac{n\brak{n+1}}{12}\left[3n\brak{n+2}+\brak{n+2}\right]\\
+                           &= \frac{n\brak{n+1}\brak{n+2}\brak{3n+1}}{12}
 \end{align}
 \begin{align}
-    \frac{n(n+1)(n+2)(3n+1)}{12}\cdot u[n] &= y[n]
+    \frac{n\brak{n+1}\brak{n+2}\brak{3n+1}}{12}\cdot u\brak{n} &= y\brak{n}
+\end{align}
+\begin{align}
+     y\brak{n} & = \begin{cases}
+        0 & \text{for } n < 0 \\
+        \frac{n\brak{n+1}\brak{n+2}\brak{3n+1}}{12}\cdot& \text{for } n \geq 0
+    \end{cases}
 \end{align}
 \begin{figure}[h]
-        \includegraphics[width=\columnwidth]{Figure_2.png}
-        \caption{Stem Plot of y[n]}
-    \end{figure}
+    \centering
+    \includegraphics[width=\columnwidth]{Figure_2.png}
+    \caption{Stem Plot of $y\brak{n}$}
+\end{figure}
 \vspace{1cm}
 
-The Ncert question result is proved,
 \begin{align}
-     \dfrac{ \sum_{k=1}^n k(k+1)^2 }{\sum_{k=1}^n k^2(k+1)} &= \dfrac{\frac{n(n+1)(n+2)(3n+5)}{12}}{\frac{n(n+1)(n+2)(3n+1)}{12}}\\
+     \dfrac{ \sum_{k=1}^n k\brak{k+1}^2 }{\sum_{k=1}^n k^2\brak{k+1}} &= \dfrac{\frac{n\brak{n+1}\brak{n+2}\brak{3n+5}}{12}}{\frac{n\brak{n+1}\brak{n+2}\brak{3n+1}}{12}}\\
                                                             &= \frac{3n+5}{3n+1}
 \end{align}
 
 Derivation of z-transform of the denominator:
 \begin{align}
-    y[n] &= \frac{n(n+1)(n+2)(3n+1)}{12}\cdot u[n]\\
-         &= \frac{3n^4 + 10n^3 + 9n^2 + 2n}{12}\cdot u[n]\
+    y\brak{n} &= \frac{n\brak{n+1}\brak{n+2}\brak{3n+1}}{12}\cdot u\brak{n}\\
+         &= \frac{3n^4 + 10n^3 + 9n^2 + 2n}{12}\cdot u\brak{n}\
 \end{align}
 
 \begin{equation}
-    Y(z) = \sum_{n=-\infty}^\infty y[n]\cdot z^{-n}
+    Y\brak{z} = \sum_{n=-\infty}^\infty y\brak{n}\cdot z^{-n}
 \end{equation}
-Z-Transform is calculated as:
-\begin{align}\label{eq:9}
-    Y(z) &= \sum_{n=-\infty}^\infty\frac{3n^4 + 10n^3 + 9n^2 + 2n}{12}\\
-    12Y(z) &= \sum_{n=0}^\infty 3n^4z^{-n} +  \sum_{n=0}^\infty 10n^3z^{-n}\\ &+  \sum_{n=0}^\infty 9n^2 z^{-n} +\sum_{n=0}^\infty 2n\hspace{3pt}z^{-n}\notag
-\end{align}
-We can say that $Y_i$ denote the z-transform of $n^{i}$ which will be same as respective $X_i$.
+We can say that $Y_i\brak{z}$ denote the z-transform of $n^{i}u\brak{n}$ which will be same as respective $X_i\brak{z}$.
 \begin{align}\label{eq:61}
     X_i=Y_i
 \end{align}
-Equation\eqref{eq:9} can be now written as:
-\begin{align}
-    Y(z) &=\frac{1}{12}(3Y_4(z) + 10Y_3(z) + 9Y_2(z) + 2Y_1(z)) \\
-         &= \frac{3}{12}\left(\frac{z^{-1}(1+11z^{-1}+11z^{-2}+z^{-3})}{(1-z^{-1})^5}\right)\\ &+ \frac{10}{12}\left(\frac{z^{-1}(1+4z^{-1}+z^{-2})}{(1-z^{-1})^4}\right) 
-         + \frac{9}{12}\left(\frac{z^{-1}(z^{-1}+1)}{(1-z^{-1})^3}\right)\notag \\ &+ \frac{2}{12}\left(\frac{z^{-1}}{(1-z^{-1})^2}.\right)\notag \\
-         &= \frac{2(z^{-1}+2z^{-2})}{(1-z^{-1})^5}
+\begin{align} \label{eq:24}
+    Y_k\brak{z} =  \brak{-z}^k \frac{d^kU\brak{z}}{dz^k}
 \end{align}
-\(Y(z)\) is a linear combination of \(Y_i(z)\) for \(i=1,2,3,4\):
+Now substituting k=1,2,3,4 we get :
 \begin{align}
-    Y(z) &= a_1 Y_1(z) + a_2 Y_2(z) + a_3 Y_3(z) + a_4 Y_4(z) \label{eq:linear_combination_Y} \\
+    Y_1\brak{z} &= \frac{z^{-1}}{\brak{1-z^{-1}}^2} , \hspace{4pt} ROC=|z|>1\\
+    Y_2\brak{z} &= \frac{z^{-1}\brak{z^{-1}+1}}{\brak{1-z^{-1}}^3} , \hspace{4pt} ROC=|z|>1\\
+    Y_3\brak{z} &= \frac{z^{-1}\brak{1+4z^{-1}+z^{-2}}}{\brak{1-z^{-1}}^4}, \hspace{4pt} ROC=|z|>1\\
+    Y_4\brak{z} &= \frac{z^{-1}\brak{1+11z^{-1}+11z^{-2}+z^{-3}}}{\brak{1-z^{-1}}^5}, \hspace{4pt} ROC=|z|>1
+\end{align}
+\begin{align}
+    Y\brak{z} &=\frac{1}{12}\brak{3Y_4\brak{z} + 10Y_3\brak{z} + 9Y_2\brak{z} + 2Y_1\brak{z}} \\
+         &= \frac{3}{12}\left(\frac{z^{-1}\brak{1+11z^{-1}+11z^{-2}+z^{-3}}}{\brak{1-z^{-1}}^5}\right)\\ &+ \frac{10}{12}\left(\frac{z^{-1}\brak{1+4z^{-1}+z^{-2}}}{\brak{1-z^{-1}}^4}\right) 
+         + \frac{9}{12}\left(\frac{z^{-1}\brak{z^{-1}+1}}{\brak{1-z^{-1}}^3}\right)\notag \\ &+ \frac{2}{12}\left(\frac{z^{-1}}{\brak{1-z^{-1}}^2}.\right)\notag \\
+         &= \frac{2\brak{z^{-1}+2z^{-2}}}{\brak{1-z^{-1}}^5}
+\end{align}
+$Y\brak{z}$ is a linear combination of $Y_i\brak{z}$ for $i=1,2,3,4$
+
+\begin{align}
+    Y\brak{z} &= a_1 Y_1\brak{z} + a_2 Y_2\brak{z} + a_3 Y_3\brak{z} + a_4 Y_4\brak{z} \label{eq:linear_combination_Y} \\
     \text{ROC}_{Y} &= \text{ROC}_{1} \cap \text{ROC}_{2} \cap \text{ROC}_{3} \cap \text{ROC}_{4} \label{eq:roc_Y}
 \end{align}
 By equation\eqref{eq:61} we can say that $Y_i$ also has same ROC as respective $X_i$. Therefore,\\
 \begin{align}
-    \text{ROC of $Y(z)$} : |z|>1
+    \text{ROC of $Y\brak{z}$} : |z|>1
 \end{align}
+
 \end{enumerate}
 \end{document}
