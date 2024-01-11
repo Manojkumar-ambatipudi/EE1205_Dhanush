@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.1.1)  10 JAN 2024 10:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.1.1)  11 JAN 2024 11:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1342,81 +1342,73 @@ LaTeX Font Info:    Trying to load font information for TS1+txr on input line 5
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
 )
-(./tables/ncert11.5.9.26.tex)
+(./tables/ncert11.5.9.26.tex
+Overfull \hbox (26.66112pt too wide) in paragraph at lines 5--26
+ [][] 
+ []
+
+)
 Overfull \hbox (13.94438pt too wide) detected at line 74
 []
  []
 
 
-Overfull \hbox (17.33385pt too wide) detected at line 81
+Overfull \hbox (15.33388pt too wide) detected at line 77
 []
  []
 
 <Figure_1.png, id=7, 462.528pt x 346.896pt>
 File: Figure_1.png Graphic file (type png)
 <use Figure_1.png>
-Package pdftex.def Info: Figure_1.png  used on input line 84.
+Package pdftex.def Info: Figure_1.png  used on input line 85.
 (pdftex.def)             Requested size: 252.0pt x 189.00427pt.
 
-Overfull \hbox (31.21269pt too wide) in paragraph at lines 83--85
+Overfull \hbox (31.21269pt too wide) in paragraph at lines 84--86
 []  [] 
  []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Overfull \hbox (27.57404pt too wide) detected at line 99
+[]
+ []
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
  <./Figure_1.png>]
-Overfull \hbox (29.28322pt too wide) detected at line 119
+Overfull \hbox (3.0006pt too wide) detected at line 111
 []
  []
 
-
-Overfull \hbox (27.57404pt too wide) detected at line 134
-[]
- []
-
-
-Overfull \hbox (3.0006pt too wide) detected at line 144
-[]
- []
-
-<Figure_2.png, id=40, 462.528pt x 346.896pt>
+<Figure_2.png, id=36, 462.528pt x 346.896pt>
 File: Figure_2.png Graphic file (type png)
 <use Figure_2.png>
-Package pdftex.def Info: Figure_2.png  used on input line 150.
+Package pdftex.def Info: Figure_2.png  used on input line 117.
 (pdftex.def)             Requested size: 252.0pt x 189.00427pt.
 
-Overfull \hbox (31.21269pt too wide) in paragraph at lines 149--151
+Overfull \hbox (31.21269pt too wide) in paragraph at lines 116--118
 []  [] 
  []
 
 
-Overfull \hbox (28.32323pt too wide) detected at line 168
+Overfull \hbox (17.17009pt too wide) detected at line 129
 []
  []
 
-[2 <./Figure_2.png>]
-Overfull \hbox (26.24991pt too wide) detected at line 179
-[]
- []
+[2
 
-[3
-
-] (./main.aux)
+ <./Figure_2.png>] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 31922 strings out of 476091
- 627744 string characters out of 5794082
- 1891330 words of memory out of 5000000
- 51573 multiletter control sequences out of 15000+600000
- 590814 words of font info for 204 fonts, out of 8000000 for 9000
+ 31900 strings out of 476091
+ 627401 string characters out of 5794082
+ 1897330 words of memory out of 5000000
+ 51569 multiletter control sequences out of 15000+600000
+ 594822 words of font info for 210 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 101i,13n,96p,1172b,582s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,20n,96p,1172b,581s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type
@@ -1424,10 +1416,10 @@ t/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type
 onts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (3 pages, 107803 bytes).
+Output written on main.pdf (2 pages, 102676 bytes).
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
- 103 compressed objects within 2 object streams
- 51 named destinations out of 1000 (max. 500000)
+ 92 PDF objects out of 1000 (max. 8388607)
+ 69 compressed objects within 1 object stream
+ 27 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
