@@ -140,7 +140,8 @@ Substituting k=2,3,4,5 in equation \eqref{eq:11.9.5.26.8}:
 
 Substituting results of equation \eqref{eq:11.9.5.26.9} to \eqref{eq:11.9.5.26.12} in equation \eqref{eq:11.9.5.26.6}:
 \begin{align}
-    y_1\brak{n} &= \frac{3n^4 + 26n^3 + 81n^2 + 106n + 48}{12}u\brak{n}
+    y_1\brak{n} &= \frac{3n^4 + 26n^3 + 81n^2 + 106n + 48}{12}u\brak{n}\\
+    &= \frac{\brak{3n+8}\brak{n+1}\brak{n+2}\brak{n+3}}{12}u\brak{n}
 \end{align}
 
 \item \underline{Analysis of Denominator:}
@@ -168,9 +169,16 @@ Using partial fractions:
 
 Substituting results of equation \eqref{eq:11.9.5.26.9} to \eqref{eq:11.9.5.26.12} in equation \eqref{eq:11.9.5.26.13}:
 \begin{align}
-    y_2\brak{n} =  \frac{3n^4 + 22n^3 + 57n^2 + 62n + 24}{12}
+    y_2\brak{n} &=  \frac{3n^4 + 22n^3 + 57n^2 + 62n + 24}{12}u\brak{n}\\
+                &= \frac{\brak{3n+4}\brak{n+1}\brak{n+2}\brak{n+3}}{12}u\brak{n}
 \end{align}
+As the sequence start from n=0 ,in RHS of question $n$ should be replaced by $n+1$:
+\begin{align}
+    \frac{y_1\brak{n}}{y_2\brak{n}} = \frac{3n+8}{3n+4}
+\end{align}
+
 \end{enumerate}
+
 
 \begin{figure}[htbp]
     \centering
