@@ -16,7 +16,7 @@
 \usepackage{mathtools}
 \usepackage{gensymb}
 \usepackage{comment}
-\usepackage[breaklinks=true]{hyperref}
+\usepackage[breaklinks=true]{hyperref} 
 \usepackage{tkz-euclide} 
 \usepackage{listings}
 \usepackage{tabularx}
@@ -45,8 +45,6 @@
 \newtheorem{rem}{Remark}
 \begin{document}
 
-
-
 \bibliographystyle{IEEEtran}
 \vspace{3cm}
 
@@ -61,6 +59,11 @@
 \renewcommand{\thetable}{\theenumi}
 
 \bibliographystyle{IEEEtran}
+    
+\textbf{\underline{RESULTS AND DERIVATIONS}}
+\input{app/appendix}
+\newpage
+
 \textbf{Question:} Show that
 \begin{equation}
     \frac{1\times2^2 + 2\times3^2 + \dots + n\times\brak{n+1}^2}{1^2\times2 + 2^2\times3 +\dots + n^2\times\brak{n+1}}  = \frac{3n+5}{3n+1}\notag
@@ -71,14 +74,6 @@
 \item \underline {Analysis of Numerator:}\\
 
 
-By the differentiation property :
-\begin{align}
- n x\brak{n} & \system{Z} \brak{-z} \frac{dX\brak{z}}{dz} \label{eq:11.9.5.26.1}\\
-\implies    n u\brak{n} & \system{Z} \frac{z^{-1}}{\brak{1-z^{-1}}^2} ,\cbrak{z\in\mathbb{C} : \lvert z \rvert > 1} \label{eq:11.9.5.26.2}\\
-\implies     n^2 u\brak{n} & \system{Z} \frac{z^{-1}\brak{z^{-1}+1}}{\brak{1-z^{-1}}^3} ,\cbrak{z\in\mathbb{C} : \lvert z \rvert > 1\label{eq:11.9.5.26.3}} \\
-\implies     n^3 u\brak{n} & \system{Z} \frac{z^{-1}\brak{1+4z^{-1}+z^{-2}}}{\brak{1-z^{-1}}^4} ,\cbrak{z\in\mathbb{C} : \lvert z \rvert > 1}\label{eq:11.9.5.26.4} \\
-\implies   n^4 u\brak{n} & \system{Z} \frac{z^{-1}\brak{1+11z^{-1}+11z^{-2}+z^{-3}}}{\brak{1-z^{-1}}^5}\label{eq:11.9.5.26.5}\\ &  \text{where} \cbrak{z\in\mathbb{C} :\lvert z \rvert > 1} \notag 
-\end{align}
 
 \begin{align}
  X_1\brak{z} &= \sum_{n=-\infty}^\infty x_1\brak{n}  z^{-n}\\
@@ -86,56 +81,19 @@ By the differentiation property :
 \end{align}
 Using results of equations \eqref{eq:11.9.5.26.2} to \eqref{eq:11.9.5.26.5} we get:
 \begin{align}
- \therefore   X_1\brak{z}&= \frac{4+2z^{-1}}{\brak{1-z^{-1}}^4} ,\cbrak{z\in\mathbb{C} : \lvert z \rvert > 1} 
+ \therefore   X_1\brak{z}&= \frac{4+2z^{-1}}{\brak{1-z^{-1}}^4} ,   \abs{z} >1 
 \end{align}
-
+From \eqref{eq:conv-sum}
 \begin{align}
-y_1\brak{n} &= \sum_{k=0}^n x_1\brak{n} \\
 y_1\brak{n} &= x_1\brak{n}\ast u\brak{n}\\
     Y_1\brak{z} &= X_1\brak{z} U\brak{z} \\
- &= \frac{4+2z^{-1}}{\brak{1-z^{-1}}^5} ,\cbrak{z\in\mathbb{C} : \lvert z \rvert > 1} 
+ &= \frac{4+2z^{-1}}{\brak{1-z^{-1}}^5} , \abs{z}> 1 
 \end{align}
 
 Using partial fractions:
 \begin{align}
-    Y_1(z) &= \frac{22z^{-1}}{\brak{1-z^{-1}}} + \frac{48z^{-2}}{\brak{1-z^{-1}}^2} + \frac{52z^{-3}}{\brak{1-z^{-3}}^3} \label{eq:11.9.5.26.6}\\
-    &+ \frac{28z^{-4}}{\brak{1-z^{-1}}^4}+\frac{6z^{-5}}{\brak{1-z^{-1}}^5}+4 \notag 
-\end{align}
-
-\begin{align}
-    \frac{z^{-1}}{\brak{1-z^{-1}}} &= \frac{1}{1-z^{-1}} -1
-\end{align}
-
-Taking the inverse z-transform of each term: 
-\begin{align}
-   u\brak{n-1}\system{Z} \frac{z^{-1}}{\brak{1-z^{-1}}}
-\end{align}
-
-Time shifting property:
-\begin{align}
-     x\brak{n-k}\system{Z} z^{-k}X\brak{z}\label{eq:11.9.5.26.7}
-\end{align}
-
-From equation \eqref{eq:11.9.5.26.1}:
-\begin{align}
-     nu\brak{n-1}&\system{Z} z\frac{2z^{-2}}{\brak{1-z^{-1}}^2}
-\end{align}
-
-By equation \eqref{eq:11.9.5.26.7}:
-\begin{align}
-     \frac{\brak{n-1}}{2}u\brak{n-2}&\system{Z} \frac{z^{-2}}{\brak{1-z^{-1}}^2} \\
-     \frac{\brak{n-1}\brak{n-2}}{6}u\brak{n-3}&\system{Z} \frac{z^{-3}}{\brak{1-z^{-1}}^3}\\
-     \vdots \notag \\
-      \frac{\brak{n-1}\brak{n-2}\ldots \brak{n-k+1}}{\brak{k-1}!}u\brak{n-k}&\system{Z} \frac{z^{-k}}{\brak{1-z^{-1}}^k}\label{eq:11.9.5.26.8}
-\end{align}
-
-In equation \eqref{eq:11.9.5.26.8} u\brak{n-k} can be replaced by u\brak{n-1}.\\
-Substituting k=2,3,4,5 in equation \eqref{eq:11.9.5.26.8}:
-\begin{align}
-     Z^{-1}\left[\frac{z^{-2}}{\brak{1-z^{-1}}^2}\right]&=\brak{n-1}u\brak{n-1}\label{eq:11.9.5.26.9} \\
-     Z^{-1}\left[\frac{z^{-3}}{\brak{1-z^{-1}}^3}\right]&=\frac{\brak{n-1}\brak{n-2}}{2}u\brak{n-1}\label{eq:11.9.5.26.10} \\
-     Z^{-1}\left[\frac{z^{-4}}{\brak{1-z^{-1}}^4}\right]&=\frac{\brak{n-1}\brak{n-2}\brak{n-3}}{6}u\brak{n-1}\label{eq:11.9.5.26.11} \\
-     Z^{-1}\left[\frac{z^{-5}}{\brak{1-z^{-1}}^5}\right]&=\frac{\brak{n-1}\brak{n-2}\brak{n-3}\brak{n-4}}{24}\label{eq:11.9.5.26.12}\\ &u\brak{n-1} \notag 
+    Y_1(z) &= \frac{22z^{-1}}{\brak{1-z^{-1}}} + \frac{48z^{-2}}{\brak{1-z^{-1}}^2} + \frac{52z^{-3}}{\brak{1-z^{-3}}^3} , \label{eq:11.9.5.26.6}\\
+    &+ \frac{28z^{-4}}{\brak{1-z^{-1}}^4}+\frac{6z^{-5}}{\brak{1-z^{-1}}^5}+4 , \abs{z}>1 \notag 
 \end{align}
 
 Substituting results of equation \eqref{eq:11.9.5.26.9} to \eqref{eq:11.9.5.26.12} in equation \eqref{eq:11.9.5.26.6}:
@@ -151,20 +109,19 @@ Substituting results of equation \eqref{eq:11.9.5.26.9} to \eqref{eq:11.9.5.26.1
 \end{align}
 \text{Using results of equation \eqref{eq:11.9.5.26.2} to \eqref{eq:11.9.5.26.5} we get:}
 \begin{align}
-   \therefore  X_2\brak{z} &= \frac{2+4z^{-1}}{\brak{1-z^{-1}}^4},\cbrak{z\in\mathbb{C} : \lvert z \rvert > 1}   
+   \therefore  X_2\brak{z} &= \frac{2+4z^{-1}}{\brak{1-z^{-1}}^4},   \abs{z} >1   
 \end{align}
-
+From \eqref{eq:conv-sum}
 \begin{align}
-    y_2\brak{n} &= \sum_{k=0}^n x_2\brak{n}\\
     y_2\brak{n} &= x_2\brak{n}\ast u\brak{n}\\
     Y_2\brak{z} &= X_2\brak{z} U\brak{z} \\
- &=\frac{2+4z^{-1}}{\brak{1-z^{-1}}^5} ,\cbrak{z\in\mathbb{C} : \lvert z \rvert > 1} 
+ &=\frac{2+4z^{-1}}{\brak{1-z^{-1}}^5} ,   \abs{z} >1 
 \end{align}
 
 Using partial fractions:
 \begin{align}
     Y_2\brak{z} &= \frac{14z^{-1}}{\brak{1-z^{-1}}} + \frac{36z^{-2}}{\brak{1-z^{-1}}^2} + \frac{44z^{-3}}{\brak{1-z^{-3}}^3} \label{eq:11.9.5.26.13}\\
-    &+ \frac{26z^{-4}}{\brak{1-z^{-1}}^4}+\frac{6z^{-5}}{\brak{1-z^{-1}}^5}+2\notag 
+    &+ \frac{26z^{-4}}{\brak{1-z^{-1}}^4}+\frac{6z^{-5}}{\brak{1-z^{-1}}^5}+2 , \abs{z}>1\notag 
 \end{align}
 
 Substituting results of equation \eqref{eq:11.9.5.26.9} to \eqref{eq:11.9.5.26.12} in equation \eqref{eq:11.9.5.26.13}:
@@ -172,11 +129,11 @@ Substituting results of equation \eqref{eq:11.9.5.26.9} to \eqref{eq:11.9.5.26.1
     y_2\brak{n} &=  \frac{3n^4 + 22n^3 + 57n^2 + 62n + 24}{12}u\brak{n}\\
                 &= \frac{\brak{3n+4}\brak{n+1}\brak{n+2}\brak{n+3}}{12}u\brak{n}
 \end{align}
-As the sequence start from n=0 ,in RHS of question $n$ should be replaced by $n+1$:
+As the sequence start from n=0 , in RHS of question $n$ should be replaced by $n+1$:
 \begin{align}
     \frac{y_1\brak{n}}{y_2\brak{n}} = \frac{3n+8}{3n+4}
 \end{align}
-
+Hence Prooved.
 \end{enumerate}
 
 
@@ -201,10 +158,11 @@ As the sequence start from n=0 ,in RHS of question $n$ should be replaced by $n+
     \label{fig:y1}
 \end{figure}
 
-\begin{figure}[htbp]
-    \centering
+\begin{figure}[h]
     \includegraphics[width=1\columnwidth]{figs/y2_plot.png}
     \caption{Stem Plot of $y_2\brak{n}$}
     \label{fig:y2}
 \end{figure}
+
+
 \end{document}
