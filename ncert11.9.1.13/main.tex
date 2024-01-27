@@ -1,0 +1,98 @@
+% \iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{float}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{amsmath}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\title{NCERT 11.9 13Q}
+\author{EE22BTECH11015 - DHANUSH V NAYAK$^{*}$% <-this % stops a space
+}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\theenumi}
+\textbf{Question:} Write the first five terms of each of the sequences in Exercises 11 to 13 and obtain the corresponding series:\\
+$a_1=a_2=2,$\hspace{5pt} $a_n=a_{n-1} -1,$\hspace{5pt} $n>2$\\
+\textbf{Solution:}
+\begin{equation}\label{eq:11.9.1.13.1}
+    x_{n+1}=x_{n} -1 , n>1
+\end{equation}\\
+Substituting $n=2 , n=3 , n=4$ in equation \eqref{eq:11.9.1.13.1} we get:
+\begin{align}
+    x\brak{2} &= x\brak{1} - 1 = 1  \\
+    x\brak{3} &= x\brak{2} - 1 = 0\\
+    x\brak{4} &= x\brak{3} - 1 = -1 
+\end{align}
+
+\begin{align*}
+    \text{The corresponding series is: } \quad 2 + 2 + 1 + 0 + (-1) + \dots
+\end{align*}
+\input{tables/ncert11.9.1.13.tab.tex}
+By time shifting property:
+\begin{align}
+	x\brak{n-k}&\system{Z} z^{-k}X\brak{z}\\
+\label{eq:shiftk}
+\implies u\brak{n-1} &\system{Z} z^{-1}U\brak{z} ,   \abs{z} >1\\
+\implies u\brak{n-2} &\system{Z} z^{-2}U\brak{z} ,   \abs{z} >1\label{eq:11.9.1.13.2}
+\end{align}
+By Differentiation Property:
+\begin{align}
+	nx(n) &\system{Z} -zX^{\prime}(z)
+\label{eq:xzder}\\
+\implies    n u\brak{n-2} & \system{Z} \frac{2z^{-2}-z^{-3}}{\brak{1-z^{-1}}^2} ,   \abs{z} >1 \label{eq:11.9.5.26.3}\\
+X\brak{z} &= \sum_{n=-\infty}^\infty x\brak{n} z^{-n}\\
+            &=  \sum_{n=-\infty}^\infty \brak{2u\brak{n} + \brak{1-n}u\brak{n-2}} z^{-n}
+\end{align}
+Using results of \eqref{eq:11.9.1.13.2} and \eqref{eq:11.9.5.26.3}:
+\begin{align}
+    X\brak{z} &= \frac{2-2z^{-1}-z^{-2}}{\brak{1-z^{-1}}^2}  ,   \abs{z} >1
+\end{align}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\columnwidth]{figs/fig_x(n).png}
+    \caption{Stem Plot of $x\brak{n}$}
+    \label{fig:x(n)}
+\end{figure}
+\end{document}
