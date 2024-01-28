@@ -16,8 +16,8 @@ int main() {
     for (int n = -10; n <= 10; n++) {
         // Calculate values
         int u_n = n >= 0 ? 1 : 0;
-        int u_n_minus_2 = (n - 2) >= 0 ? 1 : 0;
-        int result = 2 * u_n + (1 - n) * u_n_minus_2;
+        int u_n_minus_1 = (n - 1) >= 0 ? 1 : 0;
+        int result = 2 * u_n + (1 - n) * u_n_minus_1;
 
         // Write to file
         fprintf(file, "%d     %d\n", n, result);

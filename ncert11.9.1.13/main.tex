@@ -45,7 +45,7 @@
 \begin{document}
 
 \bibliographystyle{IEEEtran}
-\title{NCERT 11.9 13Q}
+\title{NCERT 11.9.1.13Q}
 \author{EE22BTECH11015 - DHANUSH V NAYAK$^{*}$% <-this % stops a space
 }
 \maketitle
@@ -56,38 +56,44 @@
 \textbf{Question:} Write the first five terms of each of the sequences in Exercises 11 to 13 and obtain the corresponding series:\\
 $a_1=a_2=2,$\hspace{5pt} $a_n=a_{n-1} -1,$\hspace{5pt} $n>2$\\
 \textbf{Solution:}
-\begin{equation}\label{eq:11.9.1.13.1}
-    x_{n+1}=x_{n} -1 , n>1
-\end{equation}\\
-Substituting $n=2 , n=3 , n=4$ in equation \eqref{eq:11.9.1.13.1} we get:
+\input{tables/ncert11.9.1.13.tab}
+\begin{align}
+    x\brak{n+2} - x\brak{n+1} &= -1 , n\geq 0 \label{eq:11.9.1.13.1}
+\end{align}
+Substituting $n=0 , n=1 , n=2$ in equation \eqref{eq:11.9.1.13.1} we get:
 \begin{align}
     x\brak{2} &= x\brak{1} - 1 = 1  \\
     x\brak{3} &= x\brak{2} - 1 = 0\\
     x\brak{4} &= x\brak{3} - 1 = -1 
 \end{align}
-
-\begin{align*}
-    \text{The corresponding series is: } \quad 2 + 2 + 1 + 0 + (-1) + \dots
-\end{align*}
-\input{tables/ncert11.9.1.13.tab.tex}
-By time shifting property:
+\text{The corresponding series is: } 
 \begin{align}
-	x\brak{n-k}&\system{Z} z^{-k}X\brak{z}\\
-\label{eq:shiftk}
-\implies u\brak{n-1} &\system{Z} z^{-1}U\brak{z} ,   \abs{z} >1\\
-\implies u\brak{n-2} &\system{Z} z^{-2}U\brak{z} ,   \abs{z} >1\label{eq:11.9.1.13.2}
+2 + 2 + 1 + 0 + (-1) + \dots \notag
 \end{align}
-By Differentiation Property:
+One sided $Z$-transform is defined as :
 \begin{align}
-	nx(n) &\system{Z} -zX^{\prime}(z)
-\label{eq:xzder}\\
-\implies    n u\brak{n-2} & \system{Z} \frac{2z^{-2}-z^{-3}}{\brak{1-z^{-1}}^2} ,   \abs{z} >1 \label{eq:11.9.5.26.3}\\
-X\brak{z} &= \sum_{n=-\infty}^\infty x\brak{n} z^{-n}\\
-            &=  \sum_{n=-\infty}^\infty \brak{2u\brak{n} + \brak{1-n}u\brak{n-2}} z^{-n}
+    X\brak{z} &= \sum_{n=0}^\infty x\brak{n} z^{-n}
 \end{align}
-Using results of \eqref{eq:11.9.1.13.2} and \eqref{eq:11.9.5.26.3}:
+Time shifting property for one-sided $Z$-transform:
+\begin{align}
+	x\brak{n+k}&\system{Z} z^{k}\brak{X\brak{z}-x\brak{0}-\frac{x\brak{1}}{z}-\ldots \frac{x\brak{k-1}}{z^{k-1}}}\label{eq:one-sided-shiftk}\\
+\implies x\brak{n+2} &\system{Z} z^{2}\brak{X\brak{z}-2-\frac{2}{z}} \label{eq:11.9.1.13.2} \\
+\implies x\brak{n+1} &\system{Z} z\brak{X\brak{z}-2}, \label{eq:11.9.1.13.3}
+\end{align}
+Applying one-sided $Z$-transform on equation\eqref{eq:11.9.1.13.1} and using results of equation\eqref{eq:11.9.1.13.2} and \eqref{eq:11.9.1.13.3}
+\begin{align}
+    z^{2}\brak{X\brak{z}-2-\frac{2}{z}} - z\brak{X\brak{z}-2} &= -U\brak{z}
+\end{align}
 \begin{align}
     X\brak{z} &= \frac{2-2z^{-1}-z^{-2}}{\brak{1-z^{-1}}^2}  ,   \abs{z} >1
+\end{align}
+Using partial fractions
+\begin{align}
+    X\brak{z} &= \frac{2z^{-1}}{\brak{1-z^{-1}}} - \frac{z^{-2}}{\brak{1-z^{-1}}^2} + 2\label{eq:11.9.1.13.4}\\
+\end{align}
+Substituting results of equation \eqref{eq:11.9.5.26.9} to \eqref{eq:11.9.5.26.12} in equation \eqref{eq:11.9.1.13.4}:
+\begin{align}
+    x\brak{n} &= 2u\brak{n}+\brak{1-n}u\brak{n-1}
 \end{align}
 \begin{figure}[htbp]
     \centering
