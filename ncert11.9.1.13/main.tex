@@ -58,53 +58,41 @@ $a_1=a_2=2,$\hspace{5pt} $a_n=a_{n-1} -1,$\hspace{5pt} $n>2$\\
 \textbf{Solution:}
 \input{tables/ncert11.9.1.13.tab}
 \begin{align}
-    x\brak{n+1} - x\brak{n} &= -u\brak{n-1} , n\geq 0 \label{eq:11.9.1.13.1}
+    x\brak{n+1} - x\brak{n} &= -u\brak{n-1} \label{eq:11.9.1.13.1}
 \end{align}
-Homogeneous solution :-
+
+Time shifting property for one-sided $Z$-transform:
 \begin{align}
-    x\brak{n+1} - x\brak{n} &= 0\\
-    x_h\brak{n} &= cu\brak{n}
+x\brak{n+k}&\system{Z} z^{k}\brak{X\brak{z}-x\brak{0}-\frac{x\brak{1}}{z}-\ldots \frac{x\brak{k-1}}{z^{k-1}}}\label{eq:one-sided-shiftk}\\
+\implies x\brak{n+1} &\system{Z} z\brak{X\brak{z}-2}\label{eq:11.9.1.13.2}\\
+\implies u\brak{n-1} &\system{Z} \frac{z^{-1}}{1-z^{-1}},\abs{z}>1 \label{eq:11.9.1.13.3}
 \end{align}
-From table \ref{tab:11.9.1.13}
+Applying one-sided $Z$-transform on equation\eqref{eq:11.9.1.13.1} and using results of equation\eqref{eq:11.9.1.13.2} and \eqref{eq:11.9.1.13.3}
 \begin{align}
-    x\brak{0} &= 2\\
-    \therefore c&=2\\
-    x_h\brak{n} &= 2u\brak{n}
+ z\brak{X\brak{z}-2} - X\brak{z} &= --\frac{z^{-1}}{1-z^{-1}}\\
+    X\brak{z} &= \frac{2-2z^{-1}-z^{-2}}{\brak{1-z^{-1}}^2}  ,   \abs{z} >1
 \end{align}
-Transient solution :
+Using partial fractions
 \begin{align}
-     x\brak{n+1} - x\brak{n} &= -u\brak{n-1} \label{eq:transient_equation}
+    X\brak{z} &= \frac{2z^{-1}}{\brak{1-z^{-1}}} - \frac{z^{-2}}{\brak{1-z^{-1}}^2} + 2\label{eq:11.9.1.13.4}
 \end{align}
-One sided $Z$-transform is defined as :
+Taking inverse $Z$-transform by results of equation \eqref{eq:11.9.5.26.9} and \eqref{eq:11.9.1.13.3} in equation \eqref{eq:11.9.1.13.4}:
 \begin{align}
-    X\brak{z} &= \sum_{n=0}^\infty x\brak{n} z^{-n}
+    x\brak{n} &= 2u\brak{n}+\brak{1-n}u\brak{n-1}\label{eq:11.9.1.13.5}
 \end{align}
-Time shifting property :
-\begin{align}
-	x\brak{n-k}&\system{Z} z^{-k}X\brak{z}\label{eq:shiftk}\\
-\implies x\brak{n+1} &\system{Z} z\brak{X\brak{z}} \label{eq:11.9.1.13.2} \\
-\implies u\brak{n-1} &\system{Z} \frac{z^{-1}}{1-z^{-1}} \label{eq:11.9.1.13.3}
-\end{align}
-Applying one-sided $Z$-transform on equation\eqref{eq:transient_equation} and using results of equation\eqref{eq:11.9.1.13.2} and \eqref{eq:11.9.1.13.3}
-\begin{align}
-    z\brak{X\brak{z}}- X\brak{z} &= -\frac{z^{-1}}{1-z^{-1}}
-\end{align}
-\begin{align}
-    X\brak{z} &= \frac{z^{-2}}{\brak{1-z^{-1}}^2}  ,   \abs{z} >1\label{eq:11.9.1.13.4}
-\end{align}
-Substituting result of equation \eqref{eq:11.9.5.26.9}  in equation \eqref{eq:11.9.1.13.4}:
-\begin{align}
-    x_t\brak{n} &= \brak{1-n}u\brak{n-1}
-\end{align}
-Now,
-\begin{align}
-    x\brak{n} &= x_h\brak{n} + x_t\brak{n} \\
-                &= 2u\brak{n} + \brak{1-n}u\brak{n-1}
-\end{align} 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\columnwidth]{figs/fig_x(n).png}
     \caption{Stem Plot of $x\brak{n}$}
     \label{fig:x(n)}
 \end{figure}
+Substituting $n=0,1,2,3,4$ in equation\eqref{eq:11.9.1.13.5} :
+\begin{align}
+    x\brak{0} &= 2\\
+    x\brak{1} &= 2\\
+    x\brak{2} &= x\brak{1} - 1 = 1  \\
+    x\brak{3} &= x\brak{2} - 1 = 0\\
+    x\brak{4} &= x\brak{3} - 1 = -1 
+\end{align}
+
 \end{document}
