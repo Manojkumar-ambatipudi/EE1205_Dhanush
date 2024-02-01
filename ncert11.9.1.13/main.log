@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.1.1)  31 JAN 2024 09:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.1.1)  1 FEB 2024 14:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1288,29 +1288,24 @@ LaTeX Font Info:    Trying to load font information for TS1+txr on input line 5
 File: ts1txr.fd 2000/12/15 v3.1
 )
 (./tables/ncert11.9.1.13.tab.tex
-Overfull \hbox (6.01016pt too wide) in paragraph at lines 5--13
+Overfull \hbox (6.01016pt too wide) in paragraph at lines 5--18
  [][] 
  []
 
 )
-Overfull \hbox (16.06177pt too wide) detected at line 70
-[]
- []
+
+LaTeX Warning: Reference `eq:11.9.5.26.9' on page 1 undefined on input line 69.
 
 
-LaTeX Warning: Reference `eq:11.9.5.26.9' on page 1 undefined on input line 80.
-
-
-<figs/fig_x(n).png, id=12, 462.528pt x 346.896pt>
-File: figs/fig_x(n).png Graphic file (type png)
-<use figs/fig_x(n).png>
-Package pdftex.def Info: figs/fig_x(n).png  used on input line 86.
+<figs/Theory_vs_Simulation.png, id=9, 462.528pt x 346.896pt>
+File: figs/Theory_vs_Simulation.png Graphic file (type png)
+<use figs/Theory_vs_Simulation.png>
+Package pdftex.def Info: figs/Theory_vs_Simulation.png  used on input line 83.
 (pdftex.def)             Requested size: 252.0pt x 189.00427pt.
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
- <./figs/fig_x(n).png>]
-(./main.aux)
+ <./figs/Theory_vs_Simulation.png>] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1318,10 +1313,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30505 strings out of 476091
- 600014 string characters out of 5794082
- 1883330 words of memory out of 5000000
- 50195 multiletter control sequences out of 15000+600000
+ 30497 strings out of 476091
+ 599984 string characters out of 5794082
+ 1877330 words of memory out of 5000000
+ 50191 multiletter control sequences out of 15000+600000
  593184 words of font info for 208 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  101i,18n,96p,1172b,436s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1333,10 +1328,10 @@ fonts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (1 page, 66444 bytes).
+Output written on main.pdf (1 page, 70202 bytes).
 PDF statistics:
- 85 PDF objects out of 1000 (max. 8388607)
- 63 compressed objects within 1 object stream
- 18 named destinations out of 1000 (max. 500000)
+ 78 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
+ 14 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
