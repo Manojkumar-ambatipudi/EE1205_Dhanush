@@ -1,0 +1,24 @@
+\tikzstyle{block} = [draw, rectangle, 
+    minimum height=3em, minimum width=6em]
+\tikzstyle{sum} = [draw, circle, node distance=1cm]
+\tikzstyle{input} = [coordinate]
+\tikzstyle{output} = [coordinate]
+\tikzstyle{pinstyle} = [pin edge={to-,thin,black}]
+
+\begin{tikzpicture}[auto, node distance=2cm,>=latex']
+
+    \node [input, name=input] {};
+    \node [sum, right of=input] (sum) {};
+    \node [block, right of=sum, node distance=3cm] (controller) {$C(s)$};
+    \node [block, right of=controller, node distance=4cm] (system) {$G(s)$}; 
+    \node [output, right of=system] (output) {};
+    \node [block, below of=system] (measurements) {$F(s)$};
+
+    \draw [draw,->] (input) -- node {$r(t)$} (sum);
+    \draw [->] (sum) -- node {$e(t)$} (controller);
+    \draw [->] (controller) -- node[name=u] {$w(t)$} (system);
+    \draw [->] (system) -- node [name=y] {$y(t)$} (output);
+    \draw [->] (y) |- (measurements);
+    \draw [->] (measurements) -| node[pos=0.99] {$-$} 
+        node [near end] {$y(t)$} (sum);
+\end{tikzpicture}

@@ -1,0 +1,105 @@
+% \iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{float}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{amsmath}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\title{GATE-EE-Q14}
+\author{EE23BTECH11015 - DHANUSH V NAYAK$^{*}$% <-this % stops a space
+}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\theenumi}
+\textbf{Question:}Consider a unity-gain negative feedback system consisting of the plant G(s) (given below) and a proportional-integral controller. Let the proportional gain and integral
+gain be 3 and 1, respectively. For a unit step reference input, the final values of the
+controller output and the plant output, respectively, are
+\begin{align}
+    G\brak{s} = \frac{1}{\brak{s-1}} \notag
+\end{align}
+\solution 
+\input{tables/gate_ee_Q14tab}
+\begin{figure}[H]
+    \centering
+    \input{figs/gate_ee_Q14_diagram}
+    \caption{Block Diagram of System}
+    \label{fig:gate_ee_Q14_blockdiagram}
+\end{figure}
+\begin{align}
+    e\brak{t} &= r\brak{t} - y\brak{t}  \\
+    E\brak{s}&= U\brak{s} - Y\brak{s}\\
+             &= \frac{1}{s} - Y\brak{s}\label{eq:gate_ee_Q14.1}
+\end{align} 
+Now from \figref{fig:gate_ee_Q14_blockdiagram},
+\begin{align}
+    w\brak{t} &= K_{p}e\brak{t} + K_{i}\int_{0}^{t}e\brak{t} dt\\
+    W\brak{s} &= 3E\brak{s} + \frac{1}{s}E\brak{s}\label{eq:gate_ee_Q14.2}\\
+    Y\brak{s} &= G\brak{s}W\brak{s}
+\end{align}
+From equation \eqref{eq:gate_ee_Q14.1} and \eqref{eq:gate_ee_Q14.2}:
+\begin{align}
+    Y\brak{s} &=  \frac{3s+1}{s\brak{s+1}^2} ,  Re(s)>-1
+\end{align}
+By Final Value Theorem:
+\begin{align}
+    \lim_{t \to \infty} f(t)&= \lim_{s \to 0} sF\brak{s}\label{eq:gate_ee_Q14.3}
+\end{align}
+From \eqref{eq:gate_ee_Q14.3}:
+\begin{align}
+     \lim_{t \to \infty} y(t)&= \lim_{s \to 0} sY\brak{s}\\
+                            &= 1
+\end{align}
+Substituting equation\eqref{eq:gate_ee_Q14.1} in  equation\eqref{eq:gate_ee_Q14.2}:
+\begin{align}
+    W\brak{s} &= \brak{\frac{1}{s} - Y\brak{s}}\brak{3 + \frac{1}{s}}\\
+            &= \frac{\brak{s-1}\brak{3s+1}}{s\brak{s+1}^2} ,  Re(s)>-1
+\end{align}
+Applying Final Value Theorem on W\brak{s}:
+\begin{align}
+     \lim_{t \to \infty} w(t)&= \lim_{s \to 0} sW\brak{s}\\
+                            &= -1
+\end{align}
+\end{document}
+
