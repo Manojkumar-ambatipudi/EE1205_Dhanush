@@ -9,8 +9,8 @@
 
     \node [input, name=input] {};
     \node [sum, right of=input] (sum) {};
-    \node [block, right of=sum, node distance=3cm] (controller) {$C(s)$};
-    \node [block, right of=controller, node distance=4cm] (system) {$G(s)$}; 
+    \node [block, right of=sum, node distance=2.5cm] (controller) {$C(s)$};
+    \node [block, right of=controller, node distance=3.5cm] (system) {$G(s)$}; 
     \node [output, right of=system] (output) {};
     \node [block, below of=system] (measurements) {$F(s)$};
 

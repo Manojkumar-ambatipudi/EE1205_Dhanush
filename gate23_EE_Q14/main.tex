@@ -53,7 +53,7 @@
 \bigskip
 \renewcommand{\thefigure}{\arabic{figure}}
 \renewcommand{\thetable}{\theenumi}
-\textbf{Question:}Consider a unity-gain negative feedback system consisting of the plant G(s) (given below) and a proportional-integral controller. Let the proportional gain and integral
+\textbf{Question:}Consider a unity-gain negative feedback system consisting of the plant $G\brak{s}$  and a proportional-integral controller. Let the proportional gain and integral
 gain be 3 and 1, respectively. For a unit step reference input, the final values of the
 controller output and the plant output, respectively, are
 \begin{align}
@@ -63,42 +63,48 @@ controller output and the plant output, respectively, are
 \input{tables/gate_ee_Q14tab}
 \begin{figure}[H]
     \centering
-    \input{figs/gate_ee_Q14_diagram}
+    \resizebox{0.52\textwidth}{!}{\input{figs/gate_ee_Q14_diagram}}
     \caption{Block Diagram of System}
     \label{fig:gate_ee_Q14_blockdiagram}
 \end{figure}
 \begin{align}
-    e\brak{t} &= r\brak{t} - y\brak{t}  \\
+    e\brak{t} &= r\brak{t} - y\brak{t}  
+\end{align}
+In frequency domain:
+\begin{align}
     E\brak{s}&= U\brak{s} - Y\brak{s}\\
              &= \frac{1}{s} - Y\brak{s}\label{eq:gate_ee_Q14.1}
 \end{align} 
 Now from \figref{fig:gate_ee_Q14_blockdiagram},
 \begin{align}
-    w\brak{t} &= K_{p}e\brak{t} + K_{i}\int_{0}^{t}e\brak{t} dt\\
+    w\brak{t} &= K_{p}e\brak{t} + K_{i}\int_{0}^{t}e\brak{t} dt
+\end{align}
+In frequency domain:
+\begin{align}
     W\brak{s} &= 3E\brak{s} + \frac{1}{s}E\brak{s}\label{eq:gate_ee_Q14.2}\\
     Y\brak{s} &= G\brak{s}W\brak{s}
 \end{align}
 From equation \eqref{eq:gate_ee_Q14.1} and \eqref{eq:gate_ee_Q14.2}:
 \begin{align}
-    Y\brak{s} &=  \frac{3s+1}{s\brak{s+1}^2} ,  Re(s)>-1
+    Y\brak{s} &=  \frac{3s+1}{s\brak{s+1}^2} ,  Re\brak{s}>-1
 \end{align}
 By Final Value Theorem:
 \begin{align}
-    \lim_{t \to \infty} f(t)&= \lim_{s \to 0} sF\brak{s}\label{eq:gate_ee_Q14.3}
+    \lim_{t \to \infty} f\brak{t}&= \lim_{s \to 0} sF\brak{s}\label{eq:gate_ee_Q14.3}
 \end{align}
 From \eqref{eq:gate_ee_Q14.3}:
 \begin{align}
-     \lim_{t \to \infty} y(t)&= \lim_{s \to 0} sY\brak{s}\\
+     \lim_{t \to \infty} y\brak{t}&= \lim_{s \to 0} sY\brak{s}\\
                             &= 1
 \end{align}
 Substituting equation\eqref{eq:gate_ee_Q14.1} in  equation\eqref{eq:gate_ee_Q14.2}:
 \begin{align}
     W\brak{s} &= \brak{\frac{1}{s} - Y\brak{s}}\brak{3 + \frac{1}{s}}\\
-            &= \frac{\brak{s-1}\brak{3s+1}}{s\brak{s+1}^2} ,  Re(s)>-1
+            &= \frac{\brak{s-1}\brak{3s+1}}{s\brak{s+1}^2} ,  Re\brak{s}>-1
 \end{align}
 Applying Final Value Theorem on W\brak{s}:
 \begin{align}
-     \lim_{t \to \infty} w(t)&= \lim_{s \to 0} sW\brak{s}\\
+     \lim_{t \to \infty} w\brak{t}&= \lim_{s \to 0} sW\brak{s}\\
                             &= -1
 \end{align}
 \end{document}
