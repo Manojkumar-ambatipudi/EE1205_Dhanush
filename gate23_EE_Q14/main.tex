@@ -62,7 +62,6 @@ controller output and the plant output, respectively, are
 \solution 
 \input{tables/gate_ee_Q14tab}
 \begin{figure}[H]
-    \centering
     \resizebox{0.52\textwidth}{!}{\input{figs/gate_ee_Q14_diagram}}
     \caption{Block Diagram of System}
     \label{fig:gate_ee_Q14_blockdiagram}
@@ -86,7 +85,7 @@ In frequency domain:
 \end{align}
 From equation \eqref{eq:gate_ee_Q14.1} and \eqref{eq:gate_ee_Q14.2}:
 \begin{align}
-    Y\brak{s} &=  \frac{3s+1}{s\brak{s+1}^2} ,  Re\brak{s}>-1
+    Y\brak{s} &=  \frac{3s+1}{s\brak{s+1}^2} ,  Re\brak{s}>0
 \end{align}
 By Final Value Theorem:
 \begin{align}
@@ -100,7 +99,7 @@ From \eqref{eq:gate_ee_Q14.3}:
 Substituting equation\eqref{eq:gate_ee_Q14.1} in  equation\eqref{eq:gate_ee_Q14.2}:
 \begin{align}
     W\brak{s} &= \brak{\frac{1}{s} - Y\brak{s}}\brak{3 + \frac{1}{s}}\\
-            &= \frac{\brak{s-1}\brak{3s+1}}{s\brak{s+1}^2} ,  Re\brak{s}>-1
+            &= \frac{\brak{s-1}\brak{3s+1}}{s\brak{s+1}^2} ,  Re\brak{s}>0
 \end{align}
 Applying Final Value Theorem on W\brak{s}:
 \begin{align}
