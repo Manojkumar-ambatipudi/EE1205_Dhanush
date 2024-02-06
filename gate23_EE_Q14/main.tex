@@ -61,11 +61,7 @@ controller output and the plant output, respectively, are
 \end{align}
 \solution 
 \input{tables/gate_ee_Q14tab}
-\begin{figure}[H]
-    \resizebox{0.52\textwidth}{!}{\input{figs/gate_ee_Q14_diagram}}
-    \caption{Block Diagram of System}
-    \label{fig:gate_ee_Q14_blockdiagram}
-\end{figure}
+From \figref{fig:gate_ee_Q14_blockdiagram}
 \begin{align}
     e\brak{t} &= r\brak{t} - y\brak{t}  
 \end{align}
@@ -73,38 +69,75 @@ In frequency domain:
 \begin{align}
     E\brak{s}&= U\brak{s} - Y\brak{s}\\
              &= \frac{1}{s} - Y\brak{s}\label{eq:gate_ee_Q14.1}
-\end{align} 
-Now from \figref{fig:gate_ee_Q14_blockdiagram},
+\end{align}
+\begin{figure}[H]
+    \resizebox{0.55\textwidth}{!}{\input{figs/gate_ee_Q14_diagram}}
+    \caption{Block Diagram of System}
+    \label{fig:gate_ee_Q14_blockdiagram}
+\end{figure}
+
 \begin{align}
-    w\brak{t} &= K_{p}e\brak{t} + K_{i}\int_{0}^{t}e\brak{t} dt
+    w\brak{t} &= K_{p}e\brak{t} + K_{i}\int_{0}^{t}e\brak{t} dt \\
+                &= 3u\brak{t} + tu\brak{t} 
 \end{align}
 In frequency domain:
 \begin{align}
-    W\brak{s} &= 3E\brak{s} + \frac{1}{s}E\brak{s}\label{eq:gate_ee_Q14.2}\\
-    Y\brak{s} &= G\brak{s}W\brak{s}
-\end{align}
-From equation \eqref{eq:gate_ee_Q14.1} and \eqref{eq:gate_ee_Q14.2}:
-\begin{align}
-    Y\brak{s} &=  \frac{3s+1}{s\brak{s+1}^2} ,  Re\brak{s}>0
-\end{align}
-By Final Value Theorem:
-\begin{align}
-    \lim_{t \to \infty} f\brak{t}&= \lim_{s \to 0} sF\brak{s}\label{eq:gate_ee_Q14.3}
-\end{align}
-From \eqref{eq:gate_ee_Q14.3}:
-\begin{align}
-     \lim_{t \to \infty} y\brak{t}&= \lim_{s \to 0} sY\brak{s}\\
-                            &= 1
+    W\brak{s} &= 3E\brak{s} + \frac{1}{s}E\brak{s}\label{eq:gate_ee_Q14.2}
 \end{align}
 Substituting equation\eqref{eq:gate_ee_Q14.1} in  equation\eqref{eq:gate_ee_Q14.2}:
 \begin{align}
     W\brak{s} &= \brak{\frac{1}{s} - Y\brak{s}}\brak{3 + \frac{1}{s}}\\
-            &= \frac{\brak{s-1}\brak{3s+1}}{s\brak{s+1}^2} ,  Re\brak{s}>0
+            &= \frac{\brak{s-1}\brak{3s+1}}{s\brak{s+1}^2} ,  Re\brak{s}>-1
+\end{align}
+
+\begin{align}
+    Y\brak{s} &= G\brak{s}W\brak{s}\\
+    Y\brak{s} &=  \frac{3s+1}{s\brak{s+1}^2} ,  Re\brak{s}>-1 \label{eq:Y(s)}
+\end{align}
+Final Value Theorem:    
+\begin{align}
+    \lim_{t \to \infty} f\brak{t}&= \lim_{s \to 0} sF\brak{s}\label{eq:gate_ee_Q14.3}
+\end{align}
+Applying Final Value Theorem on Y\brak{s}:
+\begin{align}
+     \lim_{t \to \infty} y\brak{t}&= \lim_{s \to 0} sY\brak{s}\\
+                            &= 1
 \end{align}
 Applying Final Value Theorem on W\brak{s}:
 \begin{align}
      \lim_{t \to \infty} w\brak{t}&= \lim_{s \to 0} sW\brak{s}\\
                             &= -1
 \end{align}
+Taking partial fraction of equation\eqref{eq:Y(s)} :
+\begin{align}
+    Y\brak{s} &= \frac{1}{s} + \frac{2}{\brak{s+1}^2} - \frac{1}{s+1}\\
+\end{align}
+\begin{align}
+    tx\brak{t} &\system{L} -\frac{d{F\brak{s}}}{ds} \label{eq:laplace_diff_prop}\\
+    e^{-at}x\brak{t} &\system{L} F\brak{s+a}\label{eq:laplace_timeshifting_prop}
+\end{align}
+By using equation \eqref{eq:laplace_diff_prop} and \eqref{eq:laplace_timeshifting_prop}:
+\begin{align}
+    e^{-t}u\brak{t} &\system{L} \frac{1}{s+1}\\
+    t e^{-t}u\brak{t} &\system{L} \frac{1}{\brak{s+1}^2}
+\end{align}
+\begin{align}
+    \therefore y\brak{t} &= u\brak{t}+ 2t e^{-t}u\brak{t} - e^{-t}u\brak{t}
+\end{align}
+
+
+\begin{figure}[H]
+    \includegraphics[width=1\columnwidth]{figs/Plot of w(t).png}
+    \caption{Plot of $w\brak{t}$}
+    \label{fig:w_t}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=1\columnwidth]{figs/Plot of y(t).png}
+    \caption{Plot of $y\brak{t}$}
+    \label{fig:y_t}
+\end{figure}
+
+
 \end{document}
 
