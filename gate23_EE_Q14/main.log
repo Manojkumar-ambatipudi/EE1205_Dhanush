@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.1.25)  8 FEB 2024 12:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.1.25)  8 FEB 2024 22:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1273,7 +1273,7 @@ Overfull \hbox (6.03723pt too wide) in paragraph at lines 5--16
  []
 
 ) (./figs/gate_ee_Q14_diagram.tex)
-Overfull \hbox (31.80516pt too wide) in paragraph at lines 79--80
+Overfull \hbox (31.80516pt too wide) in paragraph at lines 84--85
 [][] 
  []
 
@@ -1281,15 +1281,15 @@ Overfull \hbox (31.80516pt too wide) in paragraph at lines 79--80
 
 
 ]
-<figs/Plot of w(t).png, id=49, 462.528pt x 346.896pt>
+<figs/Plot of w(t).png, id=55, 462.528pt x 346.896pt>
 File: figs/Plot of w(t).png Graphic file (type png)
 <use figs/Plot of w(t).png>
-Package pdftex.def Info: figs/Plot of w(t).png  used on input line 134.
+Package pdftex.def Info: figs/Plot of w(t).png  used on input line 136.
 (pdftex.def)             Requested size: 252.0pt x 189.00427pt.
-<figs/Plot of y(t).png, id=51, 462.528pt x 346.896pt>
+<figs/Plot of y(t).png, id=57, 462.528pt x 346.896pt>
 File: figs/Plot of y(t).png Graphic file (type png)
 <use figs/Plot of y(t).png>
-Package pdftex.def Info: figs/Plot of y(t).png  used on input line 140.
+Package pdftex.def Info: figs/Plot of y(t).png  used on input line 142.
 (pdftex.def)             Requested size: 252.0pt x 189.00427pt.
  [2
 
@@ -1298,10 +1298,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 29935 strings out of 478287
- 590520 string characters out of 5849289
- 870825 words of memory out of 5000000
- 47446 multiletter control sequences out of 15000+600000
+ 29938 strings out of 478287
+ 590564 string characters out of 5849289
+ 871835 words of memory out of 5000000
+ 47448 multiletter control sequences out of 15000+600000
  548840 words of font info for 202 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  101i,12n,96p,408b,928s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1314,10 +1314,10 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on main.pdf (2 pages, 101262 bytes).
+Output written on main.pdf (2 pages, 107249 bytes).
 PDF statistics:
- 112 PDF objects out of 1000 (max. 8388607)
- 85 compressed objects within 1 object stream
- 27 named destinations out of 1000 (max. 500000)
+ 117 PDF objects out of 1000 (max. 8388607)
+ 90 compressed objects within 1 object stream
+ 28 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
