@@ -24,7 +24,7 @@ plt.clf()
 
 
 # Plot the graph for w(t)
-plt.plot(time, y2, label=r'$3u(t) + tu(t)$', linestyle='-', color='red', linewidth=2)
+plt.plot(time, y2, label=r'$4e^{-t}u(t) - u(t) -4t e^{-t}u(t)$', linestyle='-', color='red', linewidth=2)
 plt.xlabel('Time')
 plt.ylabel('w(t)')
 plt.legend()

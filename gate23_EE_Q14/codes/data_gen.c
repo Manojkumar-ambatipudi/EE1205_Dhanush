@@ -16,7 +16,7 @@ int main() {
     for (t = -10.0; t <= 10.0; t += 0.1) {
         u = (t >= 0.0) ? 1.0 : 0.0;
         y = u + 2.0 * t * exp(-t) * u - exp(-t) * u;
-        w = 3.0 * u + t * u;
+        w = -u - 4.0 * t * exp(-t) * u + 4* exp(-t) * u;
         fprintf(fp, "%.2f    %.4f    %.4f \n", t, y, w);
     }
     
