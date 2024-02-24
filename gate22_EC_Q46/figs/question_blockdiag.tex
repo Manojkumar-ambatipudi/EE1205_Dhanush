@@ -1,0 +1,50 @@
+\tikzset{
+    block/.style = {draw, fill=white, rectangle, minimum height=3em, minimum width=3em}
+}
+
+\begin{tikzpicture}[auto, node distance=2cm,>=Latex]
+
+    \node (input) {$\sin\brak{t}$};
+    
+
+    \node [block, right=of input] (s1) {$S_{1}$};
+    
+    \draw[dashed, draw=black] ($(s1.south west) + (-0.2,-0.2)$) rectangle ($(s1.north east) + (0.2,0.2)$);
+    \draw [->] (input) -- (s1);
+    \draw [->] (s1) -- ++(2,0) node[right]{$\sin\brak{-t}=-\sin\brak{t}$};
+    \begin{scope}[yshift=-3cm]
+        \node (input2) {$\sin\brak{t}$};
+        \node [block, right=of input2] (s2) {$S_{2}$};
+        \draw[dashed, draw=black] ($(s2.south west) + (-0.2,-0.2)$) rectangle ($(s2.north east) + (0.2,0.2)$);
+        \draw [->] (input2) -- (s2);
+        \draw [->] (s2) -- ++(2,0) node[right]{$\sin\brak{t+1}$};
+    \end{scope}
+    
+    \begin{scope}[yshift=-6cm]
+        \node (input3) {$\sin\brak{t}$};
+        
+   
+        \node [block, right=of input3] (s3) {$S_{3}$};
+        
+   
+        \draw[dashed, draw=black] ($(s3.south west) + (-0.2,-0.2)$) rectangle ($(s3.north east) + (0.2,0.2)$);
+        
+
+        \draw [->] (input3) -- (s3);
+        \draw [->] (s3) -- ++(2,0) node[right]{$\sin\brak{2t}$};
+    \end{scope}
+       \begin{scope}[yshift=-9cm]
+        \node (input3) {$\sin\brak{t}$};
+        
+
+        \node [block, right=of input3] (s3) {$S_{4}$};
+        
+
+        \draw[dashed, draw=black] ($(s3.south west) + (-0.2,-0.2)$) rectangle ($(s3.north east) + (0.2,0.2)$);
+        
+
+        \draw [->] (input3) -- (s3);
+        \draw [->] (s3) -- ++(2,0) node[right]{$\sin^2\brak{t}$};
+    \end{scope}
+\end{tikzpicture}
+

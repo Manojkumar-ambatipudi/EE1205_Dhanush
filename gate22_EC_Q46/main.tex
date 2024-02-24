@@ -1,0 +1,120 @@
+% \iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{float}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}          
+\usetikzlibrary{positioning, arrows.meta,shapes}
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{amsmath}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\title{GATE-EC-Q46}
+\author{EE23BTECH11015 - DHANUSH V NAYAK$^{*}$% <-this % stops a space
+}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\theenumi}
+\textbf{Question:} The outputs of four systems $\brak{S_{1} , S_{2} , S_{3},S_{4}}$ corresponding to the input signal $\sin\brak{t}$, for all time $t$ , are shown in the figure. Based on the given information, which of the four systems is/are definately NOT LTI(linear and time-invariant)? 
+\begin{figure}[H]
+    \resizebox{0.34\textwidth}{!}{\input{figs/question_blockdiag}}
+    \caption{Block Diagram of Systems}
+    \label{fig:question_fig}
+\end{figure}
+\hfill(GATE22 EC Q46)\\
+\solution 
+\input{tables/gate22_EC_Q46tab}
+\begin{figure}[H]
+    \resizebox{0.55\textwidth}{!}{\input{figs/lti_system_diag}
+    }
+    \caption{Block Diagram of LTI System}
+    \label{fig:LTI_system}
+\end{figure}
+For an LTI system :
+\begin{align}
+    y(t)&=h(t)*x(t)\\
+    Y\brak{\omega}&=H\brak{\omega}X\brak{\omega}
+\end{align}
+$H\brak{\omega}$ is a complex exponential :
+\begin{align}
+    H(j\omega)=\abs{H(j\omega)}e^{j\Phi\brak{\omega}}
+\end{align}
+$x(t)=\sin\brak{t}$, and $w_{o}=1 \frac{rad}{sec}$
+\begin{align}
+    X\brak{\omega}&=j\pi \brak{\delta(\omega+\omega_0)-\delta(\omega-\omega_0)}
+   % \implies X(f)&=\frac{1}{2}\brak{\delta(f-f_0)+\delta(f+f_0)}
+\end{align}
+Now,
+
+\begin{align}
+    Y\brak{\omega}=&\brak{\delta(\omega+\omega_0)-\delta(\omega-\omega_0)}\abs{H\brak{\omega}}e^{j\Phi\brak{\omega}}\label{eq:gate22_ec_q46.1}
+\end{align}
+
+\begin{align}
+    x\brak{t}\delta\brak{t-t_{o}} = x\brak{t_{0}}\delta\brak{t-t_{o}} \label{eq:delta_prop_1}
+\end{align}
+Using property \eqref{eq:delta_prop_1} in \eqref{eq:gate22_ec_q46.1} :
+\begin{align}
+    Y\brak{\omega}=&j\abs{H(-\omega_0)}e^{j\Phi(-\omega_0)}\delta(\omega+\omega_0) \\&- j\abs{H\brak{\omega_0}}e^{j\Phi(j\omega_0)}\delta(\omega-\omega_0) \notag
+\end{align}
+
+Given $h(t)$ a real-time domain signal, $H\brak{\omega}$ is conjugate symmetric.
+\begin{align}
+    H\brak{\omega}=H(-\omega)\\
+    \Phi(-\omega_0)=-\Phi\brak{\omega_0}
+\end{align}
+Therefore,
+ \begin{align}
+    Y\brak{\omega}= j\abs{H\brak{\omega_0}}\brak{e^{-j\Phi\brak{\omega_0}}\delta(\omega+\omega_0) - e^{j\Phi\brak{\omega_0}}\delta(\omega-\omega_0)}
+\end{align}
+Taking Inverse Fourier Transform, 
+\begin{align}
+    &\delta(\omega-\omega_0) \system{F} \frac{1}{2}e^{j\omega_0t}\\
+     &\delta(\omega+\omega_0) \system{F} \frac{1}{2}e^{-j\omega_0t}\\
+    &\implies y(t)=j\abs{H\brak{\omega_0}}\frac{1}{2}\brak{e^{-j\brak{\omega_0t+\Phi\brak{\omega_0}}}-e^{j\brak{\omega_0t+\Phi\brak{\omega_0}}}}\\
+    &\implies y(t) =\abs{H\brak{\omega_0}}\sin{\brak{\omega_0t+\Phi\brak{\omega_0}}} \label{eq:gate_ec_q46_finaloutput}
+\end{align}
+From \eqref{eq:gate_ec_q46_finaloutput} we can see output cant have scaled frequency nor a squared output. But can have a shifted output or amplitude-scaled output. \\
+
+$S_{3}$ and $S_{4}$ cannot be LTI system.
+\end{document}
+

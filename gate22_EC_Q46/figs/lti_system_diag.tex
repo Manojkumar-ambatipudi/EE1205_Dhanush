@@ -1,0 +1,11 @@
+\tikzset{
+    block/.style = {draw, fill=white, rectangle, minimum height=3em, minimum width=3em}
+}
+
+\begin{tikzpicture}[auto, node distance=2cm,>=Latex]
+    \node (input) {$x\brak{t}$};
+    \node [block, right=of input] (s1) {$H\brak{\omega}$};
+    \draw[dashed, draw=black] ($(s1.south west) + (-0.2,-0.2)$) rectangle ($(s1.north east) + (0.2,0.2)$);
+    \draw [->] (input) -- (s1);
+    \draw [->] (s1) -- ++(2,0) node[right]{$y\brak{t}$};
+    \end{tikzpicture}
