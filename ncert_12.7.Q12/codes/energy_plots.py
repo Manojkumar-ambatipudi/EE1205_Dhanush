@@ -6,10 +6,10 @@ data = np.loadtxt('data.txt', skiprows=1)
 
 # Extract columns from the data
 time = data[0:200, 0]
-capacitor_energy = data[0:200, 3]
-inductor_energy = data[0:200, 4]
+capacitor_energy = data[0:200, 4]
+inductor_energy = data[0:200, 5]
 
-
+# Plotting without smoothing
 fig, ax = plt.subplots(figsize=(8, 6)) 
 
 ax.plot(time, capacitor_energy, label='Capacitor Energy', linestyle='-', color='blue', linewidth=2)
@@ -28,6 +28,7 @@ plt.grid(True)
 plt.title('Energy Across Capacitor and Inductor in LC Circuit')
 plt.savefig("Plot_energy.png")
 plt.clf()
+
 
 fig, ax = plt.subplots(figsize=(8, 6)) 
 ax.plot(time, capacitor_energy, label='Capacitor Energy', linestyle='-', color='blue', linewidth=2)

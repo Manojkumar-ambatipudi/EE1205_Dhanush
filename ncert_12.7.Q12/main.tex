@@ -81,7 +81,7 @@
 \begin{enumerate}[label=\textbf{(\alph*)}]
     \item Initial energy stored :
     \begin{align}
-        E\brak{0}&= \frac{{q\brak{0}}^2}{2C}\\
+        E\brak{0}&= \frac{1}{2}C\brak{V\brak{0}}^2\\
             &=  1 J 
     \end{align}
 \begin{figure}[H]
@@ -89,12 +89,7 @@
     \caption{Energy is Conserved During Oscillations total energy being limited to the initial energy}
     \label{fig:energy_plots}
 \end{figure}
- \item Natural frequency:\\
- From \tabref{tab:ncert-12.7.12}:
-   \begin{align}
-         f&=\frac{1}{2\pi\sqrt{LC}}\\
-          &=3183.10 Hz
-   \end{align}
+ \item 
 The Laplace domain circuit :
 \begin{figure}[H]
     \centering
@@ -106,26 +101,31 @@ The impedance of circuit :
 \begin{align}
     Z &= sL + \frac{1}{sC}
 \end{align}
-s can be expressed in resonant frequency as :
+s can be expressed in angular frequency as :
 \begin{align}
-    s &= 2\pi f\\
-    Z &= \brak{2\pi fL - \frac{1}{2\pi fC}}j\\
-    \abs{Z} &= 2\pi fL - \frac{1}{2\pi fC}
+    s &= j\omega\\
+    Z &= \brak{\omega L - \frac{1}{\omega C}}j\\
+    \abs{Z} &= \omega L - \frac{1}{\omega C}
+\end{align}
+For resonant angular frequency imaginary part of impedance is zero :
+\begin{align}
+     \omega_{o}&=\frac{1}{\sqrt{LC}}\\
+          &=20,000 \text{rad/sec}
 \end{align}
 \begin{figure}[H]
     \includegraphics[width=0.8\columnwidth]{figs/impedance_plot.png}
-    \caption{The frequency at which impedance is minimum is natural frequency at $f=3183.10 Hz$}
-    \label{fig:Z vs f}
+    \caption{The frequency at which impedance is minimum is resonant frequency which is at $20000$ rad/sec}
+    \label{fig:Z vs omega}
 \end{figure}
-\item At any given time the charge on the capacitor is given by:
-   \begin{align}
-       q\brak{t} &= q\brak{0}\cos{2\pi ft},T=\frac{1}{f}\\
-       i\brak{t} &= \frac{dq}{dt}\\
-                 &= q\brak{0}2\pi f\sin\brak{2\pi ft + \pi}
-   \end{align} 
+\item Voltage across the capacitor at any instant is given by :
+\begin{align}
+       V\brak{t} &= V\brak{0}\cos{\omega t},T=\frac{1}{f}\\
+       i\brak{t} &= C\frac{dV}{dt}\\
+                 &= -V\brak{0}\omega \sin\brak{\omega t + \pi}
+\end{align} 
 The energy stored is completely electrical when $i\brak{t}=0$. At times $t = 0, \frac{T}{2}, T, \frac{3T}{2}, \ldots$\\
 
-The energy stored is completely magnetic when $q\brak{t}=0$
+The energy stored is completely magnetic when $V\brak{t}=0$
 At times $t =\frac{T}{4},\frac{3T}{4},\frac{5T}{4} \ldots$ .
 \begin{figure}[H]
     \includegraphics[width=1\columnwidth]{figs/current_plot.png}
@@ -133,15 +133,14 @@ At times $t =\frac{T}{4},\frac{3T}{4},\frac{5T}{4} \ldots$ .
     \label{fig:current_plot}
 \end{figure}
 \begin{figure}[H]
-    \includegraphics[width=1\columnwidth]{figs/charge_plot.png}
-    \caption{Energy is completely magnetic at  $t =\frac{T}{4},\frac{3T}{4},\frac{5T}{4} \ldots$   }
-    \label{fig:charge_plot}
+    \includegraphics[width=1\columnwidth]{figs/voltage_plot.png}
+    \caption{Energy is completely electrical at  $t =\frac{T}{4},\frac{3T}{4},\frac{5T}{4} \ldots$   }
+    \label{fig:current_plot}
 \end{figure}
 \item When energy is equally shared then the capacitor has half of the maximum energy.
  \begin{align}
-        \frac{\brak{q(t)}^2}{2C} &= \frac{1}{2}\\
-        {q\brak{0}}^2\brak{\cos{2\pi ft}}^2 &= \frac{1}{2}\\
-        \cos{2\pi ft}     &= \frac{1}{\sqrt{2}}\\
+        \frac{1}{2}C\brak{V\brak{t}}^2 &= \frac{1}{2}\\
+        \cos{\omega t}     &= \frac{1}{\sqrt{2}}\\
         t                 &= \frac{(2n+1)T}{8}
 \end{align}
 Hence, the total energy is equally shared between the inductor and capacitor at the time,$t =\frac{T}{8},\frac{3T}{8},\frac{5T}{8} \ldots$ \\
@@ -153,25 +152,27 @@ Hence, the total energy is equally shared between the inductor and capacitor at 
 \item Once the resistor is added to the LC circuit, it starts dissipating energy in the form of heat.
 \begin{figure}[H] 
     \centering
-    \begin{circuitikz}
+    \begin{circuitikz}[american]
         \draw (0,0)
-        to[L, l=$L$] (2,0)
+        to[L, l=$L$ , i=$i\brak{t}$] (2,0)
         to[R, l=$R$] (2,-2)
-        to[C, l=$C$] (0,-2)
+        to[C, l=$C$ , v=$V\brak{0}$] (0,-2)
         -- (0,0);
     \end{circuitikz}
+    \caption{LCR Circuit}
+    \label{fig:LCR_damping_ckt}
 \end{figure}
 Eventually, all the initial energy is dissipated in the form of heat.
 \end{enumerate}
 \begin{figure}[H]
-    \includegraphics[width=1\columnwidth]{figs/Charge across capacitor during Damping.png}
-    \caption{Charge Across Capacitor decays as time proceeds}
+    \includegraphics[width=1\columnwidth]{figs/Voltage across capacitor during Damping.png }
+    \caption{Voltage Across Capacitor decays as time proceeds, $R=1\Omega$}
     \label{fig:charge_during_damping}
 \end{figure}
 
 \begin{figure}[H]
     \includegraphics[width=1\columnwidth]{figs/Current in circuit during damping.png}
-    \caption{Graph of current in the circuit. Becomes zero after all the energy is dissipated}
+    \caption{Graph of current in the circuit. Becomes zero after all the energy is dissipated, $R=1\Omega$}
     \label{fig:current_in_damping}
 \end{figure}
 
