@@ -78,15 +78,14 @@ $H\brak{\omega}$ is a complex exponential :
 \begin{align}
     H(j\omega)=\abs{H(j\omega)}e^{j\Phi\brak{\omega}}
 \end{align}
-$x(t)=\sin\brak{t}$, and $w_{o}=1 \frac{rad}{sec}$
+$x(t)=\sin\brak{t}$, and $w_{o}=1 rad/sec$
 \begin{align}
     X\brak{\omega}&=j\pi \brak{\delta(\omega+\omega_0)-\delta(\omega-\omega_0)}
-   % \implies X(f)&=\frac{1}{2}\brak{\delta(f-f_0)+\delta(f+f_0)}
 \end{align}
 Now,
 
 \begin{align}
-    Y\brak{\omega}=&\brak{\delta(\omega+\omega_0)-\delta(\omega-\omega_0)}\abs{H\brak{\omega}}e^{j\Phi\brak{\omega}}\label{eq:gate22_ec_q46.1}
+    Y\brak{\omega}=&\brak{\delta(\omega+\omega_0)-\delta(\omega-\omega_0)}\pi \abs{H\brak{\omega}}e^{j\Phi\brak{\omega}}\label{eq:gate22_ec_q46.1}
 \end{align}
 
 \begin{align}
@@ -94,7 +93,7 @@ Now,
 \end{align}
 Using property \eqref{eq:delta_prop_1} in \eqref{eq:gate22_ec_q46.1} :
 \begin{align}
-    Y\brak{\omega}=&j\abs{H(-\omega_0)}e^{j\Phi(-\omega_0)}\delta(\omega+\omega_0) \\&- j\abs{H\brak{\omega_0}}e^{j\Phi(j\omega_0)}\delta(\omega-\omega_0) \notag
+    Y\brak{\omega}=&j\pi \abs{H(-\omega_0)}e^{j\Phi(-\omega_0)}\delta(\omega+\omega_0) \\&- j\pi \abs{H\brak{\omega_0}}e^{j\Phi(j\omega_0)}\delta(\omega-\omega_0) \notag
 \end{align}
 
 Given $h(t)$ a real-time domain signal, $H\brak{\omega}$ is conjugate symmetric.
@@ -104,17 +103,21 @@ Given $h(t)$ a real-time domain signal, $H\brak{\omega}$ is conjugate symmetric.
 \end{align}
 Therefore,
  \begin{align}
-    Y\brak{\omega}= j\abs{H\brak{\omega_0}}\brak{e^{-j\Phi\brak{\omega_0}}\delta(\omega+\omega_0) - e^{j\Phi\brak{\omega_0}}\delta(\omega-\omega_0)}
+    Y\brak{\omega}= j\pi \abs{H\brak{\omega_0}}\brak{e^{-j\Phi\brak{\omega_0}}\delta(\omega+\omega_0) - e^{j\Phi\brak{\omega_0}}\delta(\omega-\omega_0)}
 \end{align}
 Taking Inverse Fourier Transform, 
 \begin{align}
     &\delta(\omega-\omega_0) \system{F} \frac{1}{2}e^{j\omega_0t}\\
      &\delta(\omega+\omega_0) \system{F} \frac{1}{2}e^{-j\omega_0t}\\
-    &\implies y(t)=j\abs{H\brak{\omega_0}}\frac{1}{2}\brak{e^{-j\brak{\omega_0t+\Phi\brak{\omega_0}}}-e^{j\brak{\omega_0t+\Phi\brak{\omega_0}}}}\\
-    &\implies y(t) =\abs{H\brak{\omega_0}}\sin{\brak{\omega_0t+\Phi\brak{\omega_0}}} \label{eq:gate_ec_q46_finaloutput}
+    &\implies y(t)=j\pi \abs{H\brak{\omega_0}}\frac{1}{2}\brak{e^{-j\brak{\omega_0t+\Phi\brak{\omega_0}}}-e^{j\brak{\omega_0t+\Phi\brak{\omega_0}}}}\\
+    &\implies y(t) =\abs{H\brak{\omega_0}}\sin{\brak{\omega_0t+\Phi\brak{\omega_0}}} 
+\end{align}
+$w_{0} = 1$ rad/sec :
+\begin{align}
+    y(t) =\abs{H\brak{1}}\sin{\brak{t+\Phi\brak{1}}} \label{eq:gate_ec_q46_finaloutput}
 \end{align}
 From \eqref{eq:gate_ec_q46_finaloutput} we can see output cant have scaled frequency nor a squared output. But can have a shifted output or amplitude-scaled output. \\
 
-$S_{3}$ and $S_{4}$ cannot be LTI system.
+So, $S_{3}$ and $S_{4}$ cannot be LTI system.
 \end{document}
 
