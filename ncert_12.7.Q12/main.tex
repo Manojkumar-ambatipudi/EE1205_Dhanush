@@ -71,17 +71,12 @@
 \solution
 \input{tables/ncert-12.7.12Qtab}
 
-\begin{figure}[H]
-    \centering
-    \resizebox{0.2\textwidth}{!}{\input{figs/circuit_diag_12.7.12}}
-    \caption{LC Circuit}
-    \label{fig:ncert_12.7.12_cktdiag}
-\end{figure}
+
 
 \begin{enumerate}[label=\textbf{(\alph*)}]
     \item Initial energy stored :
     \begin{align}
-        E\brak{0}&= \frac{1}{2}C\brak{V\brak{0}}^2\\
+        E\brak{0}&= \frac{1}{2}C\brak{v\brak{0^-}}^2\\
             &=  1 J 
     \end{align}
 \begin{figure}[H]
@@ -93,13 +88,31 @@
 The Laplace domain circuit :
 \begin{figure}[H]
     \centering
-    \resizebox{0.2\textwidth}{!}{\input{figs/lapalacecircuit}}
+    \resizebox{0.4\textwidth}{!}{\input{figs/lapalacecircuit}}
     \caption{LC Circuit in lapalace domain}
     \label{fig:ncert_12.7.12_cktdiag_lap}
 \end{figure}
-The impedance of circuit :
+Writing KVL in \figref{fig:ncert_12.7.12_cktdiag_lap}
 \begin{align}
-    Z &= sL + \frac{1}{sC}
+    \frac{-200}{s} - I\brak{s}Ls -I\brak{s}\frac{1}{sC} &= 0\\
+    I\brak{s} &= \frac{10^8}{25s^2 + 10^{10}}\label{eq:ncert12.7.12_i(s)}
+\end{align}
+Taking inverse-Laplace transform:
+\begin{align}
+    i\brak{t} &= -200\sin(20000t)
+\end{align}
+From \figref{fig:ncert_12.7.12_cktdiag_lap} voltage across capacitor
+\begin{align}
+    V\brak{s} &= -\brak{I\brak{s}\frac{1}{sC} + \frac{V\brak{0^-}}{s}}\\
+                &= \frac{5\times10^{3}}{25s^2+10^{10}}\label{eq:gate_22_q46_V(s)}
+\end{align}
+Taking inverse-Laplace transform:
+\begin{align}
+    v\brak{t} &=200\cos(20000t) 
+\end{align}
+The impedance of the circuit :
+\begin{align}
+    Z &=\frac{V\brak{s}}{I\brak{s}}= sL + \frac{1}{sC}
 \end{align}
 s can be expressed in angular frequency as :
 \begin{align}
@@ -117,31 +130,26 @@ For resonant angular frequency imaginary part of impedance is zero :
     \caption{The frequency at which impedance is minimum is resonant frequency which is at $20000$ rad/sec}
     \label{fig:Z vs omega}
 \end{figure}
-\item Voltage across the capacitor at any instant is given by :
-\begin{align}
-       V\brak{t} &= V\brak{0}\cos{\omega t},T=\frac{1}{f}\\
-       i\brak{t} &= C\frac{dV}{dt}\\
-                 &= -V\brak{0}\omega \sin\brak{\omega t + \pi}
-\end{align} 
-The energy stored is completely electrical when $i\brak{t}=0$. At times $t = 0, \frac{T}{2}, T, \frac{3T}{2}, \ldots$\\
+\item 
+The energy stored is completely electrical when $i\brak{t}=0$.
 
-The energy stored is completely magnetic when $V\brak{t}=0$
-At times $t =\frac{T}{4},\frac{3T}{4},\frac{5T}{4} \ldots$ .
+The energy stored is completely magnetic when $v\brak{t}=0$
+
 \begin{figure}[H]
     \includegraphics[width=1\columnwidth]{figs/current_plot.png}
-    \caption{Energy is completely electrical at $t = 0, \frac{T}{2}, T, \frac{3T}{2}, \ldots$ }
+    \caption{Energy is completely electrical at the marked points. }
     \label{fig:current_plot}
 \end{figure}
 \begin{figure}[H]
     \includegraphics[width=1\columnwidth]{figs/voltage_plot.png}
-    \caption{Energy is completely electrical at  $t =\frac{T}{4},\frac{3T}{4},\frac{5T}{4} \ldots$   }
-    \label{fig:current_plot}
+    \caption{Energy is completely magnetic at the marked points.}
+    \label{fig:voltage_plot}
 \end{figure}
 \item When energy is equally shared then the capacitor has half of the maximum energy.
  \begin{align}
-        \frac{1}{2}C\brak{V\brak{t}}^2 &= \frac{1}{2}\\
-        \cos{\omega t}     &= \frac{1}{\sqrt{2}}\\
-        t                 &= \frac{(2n+1)T}{8}
+        \frac{1}{2}C\brak{v\brak{t}}^2 &= \frac{1}{2}\\
+        \cos{\omega_{o} t}     &= \frac{1}{\sqrt{2}}\\
+        t                 &= \frac{(2n+1)T}{8} , \text{$T$} = \frac{2\pi}{\omega_{o}}
 \end{align}
 Hence, the total energy is equally shared between the inductor and capacitor at the time,$t =\frac{T}{8},\frac{3T}{8},\frac{5T}{8} \ldots$ \\
 \begin{figure}[H]
@@ -152,33 +160,38 @@ Hence, the total energy is equally shared between the inductor and capacitor at 
 \item Once the resistor is added to the LC circuit, it starts dissipating energy in the form of heat.
 \begin{figure}[H] 
     \centering
-    \begin{circuitikz}[american]
-        \draw (0,0)
-        to[L, l=$L$ , i=$i\brak{t}$] (2,0)
-        to[R, l=$R$] (2,-2)
-        to[C, l=$C$ , v=$V\brak{0}$] (0,-2)
-        -- (0,0);
-    \end{circuitikz}
-    \caption{LCR Circuit}
+\begin{circuitikz}[american, scale=1.5]
+    \draw (0,0)
+    to[inductor, l=$sL$, i=$I(s)$] (2,0)
+    to[resistor, l=$R$] (2,-2)
+    to[capacitor, l=$\frac{1}{sC}$] (1,-2)
+    to[V, v=$\frac{v(0^-)}{s}$] (0,-2)
+    -- (0,0);
+\end{circuitikz}
+    \caption{Laplace domain LCR Circuit with $R=1\Omega$}
     \label{fig:LCR_damping_ckt}
 \end{figure}
-Eventually, all the initial energy is dissipated in the form of heat.
 \end{enumerate}
-\begin{figure}[H]
-    \includegraphics[width=1\columnwidth]{figs/Voltage across capacitor during Damping.png }
-    \caption{Voltage Across Capacitor decays as time proceeds, $R=1\Omega$}
-    \label{fig:charge_during_damping}
-\end{figure}
+Applying KVL in  \figref{fig:LCR_damping_ckt}:
+\begin{align}
+    \brak{\frac{1}{sC}+sL+R}I\brak{s} &= \frac{v\brak{0^-}}{s}\\
+    I\brak{s} &= \frac{10^{10}}{2500s^2+50\times10^6s+10^{12}}
+\end{align}
+Taking inverse lapalace transform:
+\begin{align}
+    i\brak{t} &= -\frac{400}{\sqrt{3}}e^{-10000t}\sin(10^4\sqrt{3}t)
+    \end{align}
+
 
 \begin{figure}[H]
-    \includegraphics[width=1\columnwidth]{figs/Current in circuit during damping.png}
+    \includegraphics[width=1\columnwidth]{figs/Current_in_circuit_during_damping.png }
     \caption{Graph of current in the circuit. Becomes zero after all the energy is dissipated, $R=1\Omega$}
     \label{fig:current_in_damping}
 \end{figure}
 
 \begin{figure}[H]
-    \includegraphics[width=1\columnwidth]{figs/Power Dissipated across Resistor.png}
-    \caption{Power Dissipated across resistor , $R=1\Omega$}
+    \includegraphics[width=1\columnwidth]{figs/Power_Dissipated_across_Resistor.png }
+    \caption{Power Dissipated across resistor, $R=1\Omega$. The area under the curve is 1J.}
     \label{fig:power_in_damping}
 \end{figure}
 

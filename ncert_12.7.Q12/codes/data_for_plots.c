@@ -9,23 +9,22 @@ double capacitor_charge(double q0, double frequency, double time) {
 }
 
 // Function to calculate capacitor current
-double capacitor_current(double q0, double frequency, double time) {
-    return -q0 * 2 * PI * frequency * sin(2 * PI * frequency * time);
+double capacitor_current(double w, double time ,double capacitance) {
+    return -200*sin(w*time);
 }
-
 // Function to calculate capacitor voltage
-double capacitor_voltage(double charge, double capacitance) {
-    return charge / capacitance;
+double capacitor_voltage(double w, double time ,double capacitance) {
+    return 200*cos(w*time);
 }
 
 // Function to calculate capacitor energy
-double capacitor_energy(double charge, double capacitance) {
-    return 0.5 * charge * charge / capacitance;
+double capacitor_energy(double vol, double capacitance) {
+    return 0.5 * capacitance * vol*vol;
 }
 
 // Function to calculate inductor energy
-double inductor_energy(double current, double inductance) {
-    return 0.5 * inductance * current * current;
+double inductor_energy(double vol, double capacitance) {
+    return (1- 0.5 * capacitance * vol*vol);
 }
 
 int main() {
@@ -36,7 +35,7 @@ int main() {
 
     // Calculate frequency
     double frequency = 1 / (2 * PI * sqrt(inductance * capacitance));
-
+    double ang_freq = 1 / ( sqrt(inductance * capacitance));
     // Time parameters
     double time_start = 0;
     double time_end = 0.03;
@@ -55,10 +54,10 @@ int main() {
     // Calculate and write values to the file
     for (double time = time_start; time <= time_end; time += time_step) {
         double capacitor_charge_val = capacitor_charge(initial_capacitor_charge, frequency, time);
-        double capacitor_current_val = capacitor_current(initial_capacitor_charge, frequency, time);
-        double capacitor_voltage_val = capacitor_voltage(capacitor_charge_val, capacitance);
-        double capacitor_energy_val = capacitor_energy(capacitor_charge_val, capacitance);
-        double inductor_energy_val = inductor_energy(capacitor_current_val, inductance);
+        double capacitor_current_val = capacitor_current(ang_freq, time,capacitance);
+        double capacitor_voltage_val = capacitor_voltage(ang_freq,time, capacitance);
+        double capacitor_energy_val = capacitor_energy(capacitor_voltage_val, capacitance);
+        double inductor_energy_val = inductor_energy(capacitor_voltage_val, capacitance);
 
         // Write values to the file
         fprintf(file, "%.4f   \t%12.6f   \t%20.6f   \t%20.6f   \t%21.6f   \t%18.6f\n", time, capacitor_charge_val, capacitor_voltage_val, capacitor_current_val, capacitor_energy_val, inductor_energy_val);
