@@ -1,4 +1,4 @@
-% \iffalse
+\iffalse
 \let\negmedspace\undefined
 \let\negthickspace\undefined
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
@@ -56,18 +56,19 @@
 \renewcommand{\thetable}{\theenumi}
 \textbf{Question:} The outputs of four systems $\brak{S_{1} , S_{2} , S_{3},S_{4}}$ corresponding to the input signal $\sin\brak{t}$, for all time $t$ , are shown in the figure. Based on the given information, which of the four systems is/are definately NOT LTI(linear and time-invariant)? 
 \begin{figure}[H]
-    \resizebox{0.34\textwidth}{!}{\input{figs/question_blockdiag}}
+    \resizebox{0.34\textwidth}{!}{\input{2022/EC/46/figs/question_blockdiag}}
     \caption{Block Diagram of Systems}
-    \label{fig:question_fig}
+    \label{fig:question_fig_EC_Q46}
 \end{figure}
 \hfill(GATE22 EC Q46)\\
 \solution 
-\input{tables/gate22_EC_Q46tab}
+\fi
+\input{2022/EC/46/tables/gate22_EC_Q46tab}
 \begin{figure}[H]
-    \resizebox{0.55\textwidth}{!}{\input{figs/lti_system_diag}
+    \resizebox{0.55\textwidth}{!}{\input{2022/EC/46/figs/lti_system_diag}
     }
     \caption{Block Diagram of LTI System}
-    \label{fig:LTI_system}
+    \label{fig:LTI_system_EC_q46}
 \end{figure}
 For an LTI system :
 \begin{align}
@@ -89,11 +90,11 @@ Now,
 \end{align}
 
 \begin{align}
-    x\brak{t}\delta\brak{t-t_{o}} = x\brak{t_{0}}\delta\brak{t-t_{o}} \label{eq:delta_prop_1}
+    x\brak{t}\delta\brak{t-t_{o}} = x\brak{t_{0}}\delta\brak{t-t_{o}} \label{eq:gate_22_ec_delta_prop_1}
 \end{align}
-Using property \eqref{eq:delta_prop_1} in \eqref{eq:gate22_ec_q46.1} :
+Using property \eqref{eq:gate_22_ec_delta_prop_1} in \eqref{eq:gate22_ec_q46.1} :
 \begin{align}
-    Y\brak{\omega}=&j\pi \abs{H(-\omega_0)}e^{j\Phi(-\omega_0)}\delta(\omega+\omega_0)\label{eq:gate_ee_q46.3} \\&- j\pi \abs{H\brak{\omega_0}}e^{j\Phi(j\omega_0)}\delta(\omega-\omega_0) \notag 
+    Y\brak{\omega}=&j\pi \abs{H(-\omega_0)}e^{j\Phi(-\omega_0)}\delta(\omega+\omega_0)\label{eq:gate_ec_q46.3} \\&- j\pi \abs{H\brak{\omega_0}}e^{j\Phi(j\omega_0)}\delta(\omega-\omega_0) \notag 
 \end{align}
 By definition of the Fourier transform,
 \begin{align}
@@ -107,14 +108,14 @@ For real-time domain signal :
 \end{align}
 Therefore , from \eqref{eq:gate_ec_q46.2}:
 \begin{align}
-    X(\omega) =  X^*(-\omega) \label{eq:gate_ee_q46_conjsymm}
+    X(\omega) =  X^*(-\omega) \label{eq:gate_ec_q46_conjsymm}
 \end{align}
-By \eqref{eq:gate_ee_q46_conjsymm} , Given $h(t)$ a real-time domain signal, $H\brak{\omega}$ is conjugate symmetric.
+By \eqref{eq:gate_ec_q46_conjsymm} , Given $h(t)$ a real-time domain signal, $H\brak{\omega}$ is conjugate symmetric.
 \begin{align}
     \abs{H\brak{\omega}}=\abs{H(-\omega)}\label{eq:gate_22_q46_conj_result1}\\
     \Phi(-\omega)=-\Phi\brak{\omega}\label{eq:gate_22_q46_conj_result2}
 \end{align}
-Therefore using \eqref{eq:gate_22_q46_conj_result1} and \eqref{eq:gate_22_q46_conj_result2} in \eqref{eq:gate_ee_q46.3},
+Therefore using \eqref{eq:gate_22_q46_conj_result1} and \eqref{eq:gate_22_q46_conj_result2} in \eqref{eq:gate_ec_q46.3},
  \begin{align}
     Y\brak{\omega}= j\pi \abs{H\brak{\omega_0}}\brak{e^{-j\Phi\brak{\omega_0}}\delta(\omega+\omega_0) - e^{j\Phi\brak{\omega_0}}\delta(\omega-\omega_0)}
 \end{align}
@@ -132,5 +133,5 @@ $w_{0} = 1$ rad/sec :
 From \eqref{eq:gate_ec_q46_finaloutput} we can see output cant have scaled frequency nor a squared output. But can have a shifted output or amplitude-scaled output. \\
 
 So, $S_{3}$ and $S_{4}$ cannot be LTI system.
-\end{document}
+%\end{document}
 
