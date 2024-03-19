@@ -21,7 +21,7 @@ Wn=2*cutoff_freq/sampl_freq
 b, a = signal.butter(order, Wn, 'low') 
 
 #filter the input signal with butterworth filter
-output_signal = signal.filtfilt(b, a, input_signal,padlen=1)
+output_signal = signal.filtfilt(b, a, input_signal)
 
 
 #write the output signal into .wav file
