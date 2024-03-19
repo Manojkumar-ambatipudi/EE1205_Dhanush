@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.1.25)  27 FEB 2024 15:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.1.25)  27 FEB 2024 21:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1346,69 +1346,81 @@ ap}
 
 
  <./figs/Plot_energy.png>]
-<figs/impedance_plot.png, id=35, 578.16pt x 433.62pt>
+<figs/impedance_plot.png, id=39, 578.16pt x 433.62pt>
 File: figs/impedance_plot.png Graphic file (type png)
 <use figs/impedance_plot.png>
-Package pdftex.def Info: figs/impedance_plot.png  used on input line 129.
+Package pdftex.def Info: figs/impedance_plot.png  used on input line 146.
 (pdftex.def)             Requested size: 201.60077pt x 151.20026pt.
-<figs/current_plot.png, id=36, 578.16pt x 433.62pt>
+<figs/current_plot.png, id=40, 578.16pt x 433.62pt>
 File: figs/current_plot.png Graphic file (type png)
 <use figs/current_plot.png>
-Package pdftex.def Info: figs/current_plot.png  used on input line 139.
+Package pdftex.def Info: figs/current_plot.png  used on input line 156.
 (pdftex.def)             Requested size: 252.0pt x 189.00032pt.
-<figs/voltage_plot.png, id=37, 578.16pt x 433.62pt>
+<figs/voltage_plot.png, id=41, 578.16pt x 433.62pt>
 File: figs/voltage_plot.png Graphic file (type png)
 <use figs/voltage_plot.png>
-Package pdftex.def Info: figs/voltage_plot.png  used on input line 144.
-(pdftex.def)             Requested size: 252.0pt x 189.00032pt.
-<figs/Plot_equal_energy.png, id=38, 578.16pt x 433.62pt>
-File: figs/Plot_equal_energy.png Graphic file (type png)
-<use figs/Plot_equal_energy.png>
-Package pdftex.def Info: figs/Plot_equal_energy.png  used on input line 156.
+Package pdftex.def Info: figs/voltage_plot.png  used on input line 161.
 (pdftex.def)             Requested size: 252.0pt x 189.00032pt.
 
-Underfull \hbox (badness 1400) in paragraph at lines 153--159
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2 <./figs/impedance_plot.png> <./figs/current_plot.png>]
+<figs/Plot_equal_energy.png, id=66, 578.16pt x 433.62pt>
+File: figs/Plot_equal_energy.png Graphic file (type png)
+<use figs/Plot_equal_energy.png>
+Package pdftex.def Info: figs/Plot_equal_energy.png  used on input line 173.
+(pdftex.def)             Requested size: 252.0pt x 189.00032pt.
+
+Underfull \hbox (badness 1400) in paragraph at lines 170--176
 \OT1/txr/m/n/12 Hence, the to-tal en-ergy is equally shared
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 153--159
+Underfull \hbox (badness 10000) in paragraph at lines 170--176
 
  []
 
 
-Underfull \vbox (badness 1168) has occurred while \output is active []
+Overfull \hbox (16.51646pt too wide) detected at line 197
+[]
+ []
 
- [2 <./figs/impedance_plot.png> <./figs/current_plot.png> <./figs/voltage_plot.
-png>]
-<figs/Current_in_circuit_during_damping.png, id=64, 462.528pt x 346.896pt>
+
+Overfull \hbox (12.3234pt too wide) detected at line 205
+[]
+ []
+
+<figs/Current_in_circuit_during_damping.png, id=71, 462.528pt x 346.896pt>
 File: figs/Current_in_circuit_during_damping.png Graphic file (type png)
 <use figs/Current_in_circuit_during_damping.png>
 Package pdftex.def Info: figs/Current_in_circuit_during_damping.png  used on in
-put line 187.
+put line 213.
 (pdftex.def)             Requested size: 252.0pt x 189.00427pt.
 
-Underfull \vbox (badness 2922) has occurred while \output is active []
+Underfull \vbox (badness 5519) has occurred while \output is active []
 
-<figs/Power_Dissipated_across_Resistor.png, id=65, 462.528pt x 346.896pt>
+ [3 <./figs/voltage_plot.png> <./figs/Plot_equal_energy.png>]
+<figs/Power_Dissipated_across_Resistor.png, id=92, 462.528pt x 346.896pt>
 File: figs/Power_Dissipated_across_Resistor.png Graphic file (type png)
 <use figs/Power_Dissipated_across_Resistor.png>
 Package pdftex.def Info: figs/Power_Dissipated_across_Resistor.png  used on inp
-ut line 193.
+ut line 219.
 (pdftex.def)             Requested size: 252.0pt x 189.00427pt.
- [3 <./figs/Plot_equal_energy.png> <./figs/Current_in_circuit_during_damping.pn
-g> <./figs/Power_Dissipated_across_Resistor.png>] (./main.aux)
+ [4
+
+ <./figs/Current_in_circuit_during_damping.png> <./figs/Power_Dissipated_across
+_Resistor.png>] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 43965 strings out of 478287
- 1022795 string characters out of 5849289
- 1510145 words of memory out of 5000000
- 61402 multiletter control sequences out of 15000+600000
- 548840 words of font info for 202 fonts, out of 8000000 for 9000
+ 43983 strings out of 478287
+ 1023062 string characters out of 5849289
+ 1511311 words of memory out of 5000000
+ 61408 multiletter control sequences out of 15000+600000
+ 550156 words of font info for 204 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 115i,13n,118p,424b,1179s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 115i,14n,118p,424b,1179s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type
@@ -1417,10 +1429,10 @@ fonts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (3 pages, 352876 bytes).
+Output written on main.pdf (4 pages, 357682 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
- 91 compressed objects within 1 object stream
- 39 named destinations out of 1000 (max. 500000)
+ 150 PDF objects out of 1000 (max. 8388607)
+ 112 compressed objects within 2 object streams
+ 49 named destinations out of 1000 (max. 500000)
  48 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,4 +1,4 @@
-\iffalse
+%\iffalse
 \let\negmedspace\undefined
 \let\negthickspace\undefined
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
@@ -56,16 +56,15 @@
 \renewcommand{\thetable}{\theenumi}
 \textbf{Question:} The outputs of four systems $\brak{S_{1} , S_{2} , S_{3},S_{4}}$ corresponding to the input signal $\sin\brak{t}$, for all time $t$ , are shown in the figure. Based on the given information, which of the four systems is/are definately NOT LTI(linear and time-invariant)? 
 \begin{figure}[H]
-    \resizebox{0.34\textwidth}{!}{\input{2022/EC/46/figs/question_blockdiag}}
+    \resizebox{0.34\textwidth}{!}{\input{figs/question_blockdiag.tex}}
     \caption{Block Diagram of Systems}
     \label{fig:question_fig_EC_Q46}
 \end{figure}
 \hfill(GATE22 EC Q46)\\
 \solution 
-\fi
-\input{2022/EC/46/tables/gate22_EC_Q46tab}
+\input{tables/gate22_EC_Q46tab.tex}
 \begin{figure}[H]
-    \resizebox{0.55\textwidth}{!}{\input{2022/EC/46/figs/lti_system_diag}
+    \resizebox{0.55\textwidth}{!}{\input{figs/lti_system_diag}
     }
     \caption{Block Diagram of LTI System}
     \label{fig:LTI_system_EC_q46}
@@ -121,9 +120,9 @@ Therefore using \eqref{eq:gate_22_q46_conj_result1} and \eqref{eq:gate_22_q46_co
 \end{align}
 Taking Inverse Fourier Transform, 
 \begin{align}
-    &\delta(\omega-\omega_0) \system{F} \frac{1}{2}e^{j\omega_0t}\\
-     &\delta(\omega+\omega_0) \system{F} \frac{1}{2}e^{-j\omega_0t}\\
-    &\implies y(t)=j\pi \abs{H\brak{\omega_0}}\frac{1}{2}\brak{e^{-j\brak{\omega_0t+\Phi\brak{\omega_0}}}-e^{j\brak{\omega_0t+\Phi\brak{\omega_0}}}}\\
+    &\delta(\omega-\omega_0) \system{F} \frac{1}{2\pi}e^{j\omega_0t}\\
+     &\delta(\omega+\omega_0) \system{F} \frac{1}{2\pi}e^{-j\omega_0t}\\
+    &\implies y(t)=j \abs{H\brak{\omega_0}}\frac{1}{2}\brak{e^{-j\brak{\omega_0t+\Phi\brak{\omega_0}}}-e^{j\brak{\omega_0t+\Phi\brak{\omega_0}}}}\\
     &\implies y(t) =\abs{H\brak{\omega_0}}\sin{\brak{\omega_0t+\Phi\brak{\omega_0}}} 
 \end{align}
 $w_{0} = 1$ rad/sec :
@@ -133,5 +132,5 @@ $w_{0} = 1$ rad/sec :
 From \eqref{eq:gate_ec_q46_finaloutput} we can see output cant have scaled frequency nor a squared output. But can have a shifted output or amplitude-scaled output. \\
 
 So, $S_{3}$ and $S_{4}$ cannot be LTI system.
-%\end{document}
+\end{document}
 

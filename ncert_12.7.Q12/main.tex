@@ -97,18 +97,35 @@ Writing KVL in \figref{fig:ncert_12.7.12_cktdiag_lap}
     \frac{-200}{s} - I\brak{s}Ls -I\brak{s}\frac{1}{sC} &= 0\\
     I\brak{s} &= \frac{10^8}{25s^2 + 10^{10}}\label{eq:ncert12.7.12_i(s)}
 \end{align}
-Taking inverse-Laplace transform:
+Simplifying ,
 \begin{align}
-    i\brak{t} &= -200\sin(20000t)
+    I\brak{s} &= 200\brak{\frac{2\times10^4}{s^2+\brak{2\times10^4}^2}}
+\end{align}
+Now,
+\begin{align}
+    \sin\brak{at}u\brak{t} &\system{L} \frac{a}{s^2+a^2} \label{eq:gate_22_sint_result}\\
+    \sin\brak{2\times10^4 t}u\brak{t} &\system{L} \frac{2\times10^4}{s^2+\brak{2\times10^4}^2}\label{eq:gate_22_q46.4}
+\end{align}
+Uisng \eqref{eq:gate_22_q46.4} on \eqref{eq:ncert12.7.12_i(s)}and taking inverse-Laplace transform:
+\begin{align}
+    i\brak{t} &= -200\sin(2\times10^4t)u\brak{t} 
 \end{align}
 From \figref{fig:ncert_12.7.12_cktdiag_lap} voltage across capacitor
 \begin{align}
     V\brak{s} &= -\brak{I\brak{s}\frac{1}{sC} + \frac{V\brak{0^-}}{s}}\\
-                &= \frac{5\times10^{3}}{25s^2+10^{10}}\label{eq:gate_22_q46_V(s)}
+                &= \frac{5\times10^{3}s}{25s^2+10^{10}}\label{eq:gate_22_q46_V(s)}
 \end{align}
-Taking inverse-Laplace transform:
+Simplifying,
 \begin{align}
-    v\brak{t} &=200\cos(20000t) 
+    V\brak{s} &= 200 \brak{\frac{s}{s^2+\brak{2\times10^4}^2}}
+\end{align}
+\begin{align}
+    \cos\brak{at}u\brak{t} &\system{L} \frac{s}{s^2+a^2} \label{eq:gate_22_cost_result}\\
+    \cos\brak{2\times10^4t}u\brak{t} &\system{L} \frac{s}{s^2+\brak{2\times10^4}^2}\label{eq:gate_22_q46.5}
+\end{align}
+Using \eqref{eq:gate_22_q46.5} on \eqref{eq:gate_22_q46_V(s)}and taking inverse-Laplace transform:
+\begin{align}
+    v\brak{t} &=200\cos(2\times10^4t)u\brak{t}
 \end{align}
 The impedance of the circuit :
 \begin{align}
@@ -175,11 +192,20 @@ Hence, the total energy is equally shared between the inductor and capacitor at 
 Applying KVL in  \figref{fig:LCR_damping_ckt}:
 \begin{align}
     \brak{\frac{1}{sC}+sL+R}I\brak{s} &= \frac{v\brak{0^-}}{s}\\
-    I\brak{s} &= \frac{10^{10}}{2500s^2+50\times10^6s+10^{12}}
+    I\brak{s} &= \frac{10^{10}}{2500s^2+50\times10^6s+10^{12}}\\
+              &= -\frac{400}{\sqrt{3}}\brak{\frac{\sqrt{3}\times10^4}{\brak{s+10^4}^2+\brak{\sqrt{3}\times10^4}^2}}
 \end{align}
-Taking inverse lapalace transform:
+By frequency-shifting property:
 \begin{align}
-    i\brak{t} &= -\frac{400}{\sqrt{3}}e^{-10000t}\sin(10^4\sqrt{3}t)
+    e^{-\alpha t}x\brak{t} &\system{L} X\brak{s+\alpha} \label{eq:laplace_freq_shifting_prop}
+\end{align}
+Applying \eqref{eq:laplace_freq_shifting_prop} on \eqref{eq:gate_22_q46.4}
+\begin{align}
+    e^{-10^4t}\sin(10^4\sqrt{3}t)u\brak{t} &\system{L} \brak{\frac{\sqrt{3}\times10^4}{\brak{s+10^4}^2+\brak{\sqrt{3}\times10^4}^2}} \label{eq:gate_ee_q46.7}
+\end{align}
+Using \eqref{eq:gate_ee_q46.7} and  Taking inverse Laplace transform:
+\begin{align}
+    i\brak{t} &= -\frac{400}{\sqrt{3}}e^{-10^4 t}\sin(10^4\sqrt{3}t)
     \end{align}
 
 
