@@ -2,7 +2,7 @@ import soundfile as sf
 import numpy as np
 from scipy import signal
 #read .wav file 
-input_signal,fs = sf.read(r'D:\2and sem IITH\Signals and system\Audio Filter\codes\Sound_Noise.wav') 
+input_signal,fs = sf.read('Dhanush-Singing.wav') 
 
 #sampling frequency of Input signal
 sampl_freq=fs
@@ -12,7 +12,7 @@ sampl_freq=fs
 order=4
 
 #cutoff frquency 
-cutoff_freq=900.0  
+cutoff_freq=1000.0  
 
 #digital frequency
 Wn=2*cutoff_freq/sampl_freq  
