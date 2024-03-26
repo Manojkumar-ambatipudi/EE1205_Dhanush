@@ -24,8 +24,8 @@ sampl_freq=fs
 #order of the filter
 order=4   
 
-#cutoff frquency 4kHz
-cutoff_freq=900.0  
+#cutoff frquency 
+cutoff_freq=1000.0  
 
 #digital frequency
 Wn=2*cutoff_freq/sampl_freq  

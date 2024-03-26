@@ -30,7 +30,7 @@ print(k)
 
 
 #number of terms of the impulse response
-sz = 35
+sz = 100
 sz_lin = np.arange(sz)
 
 # Vectorized function to compute the impulse response

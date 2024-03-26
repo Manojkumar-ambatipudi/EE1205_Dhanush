@@ -15,7 +15,7 @@ omega = np.linspace(-3*np.pi,3*np.pi,100)
 #subplots
 plt.plot(omega, abs(H(np.exp(1j*omega))))
 plt.xlabel('$\omega$')
-plt.ylabel('$|H(e^{\jmath\omega})| $')
+plt.ylabel('$|H(e^{jmath\omega})| $')
 plt.grid()
 
 plt.savefig("H(z)_3.5.png")

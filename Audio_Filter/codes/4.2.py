@@ -1,9 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-
-
-
 n = np.arange(10)
 fn=(-1/2)**n
 

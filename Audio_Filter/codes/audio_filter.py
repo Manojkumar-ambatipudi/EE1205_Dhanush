@@ -17,10 +17,12 @@ cutoff_freq=1000.0
 #digital frequency
 Wn=2*cutoff_freq/sampl_freq  
 
+
 # b and a are numerator and denominator polynomials respectively
 b, a = signal.butter(order, Wn, 'low') 
 print(b)
 print(a)
+
 #filter the input signal with butterworth filter
 output_signal = signal.filtfilt(b, a, input_signal,padlen=1)
 #output_signal = signal.lfilter(b, a, input_signal)

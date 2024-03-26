@@ -84,7 +84,7 @@ The darker areas are those where the frequencies have very low intensities, and 
     \label{fig:before_filter_plot}
 \end{figure}
 \begin{figure}[H]
-    \includegraphics[width=0.8\columnwidth]{figs/After_audiofilter.png}
+\includegraphics[width=0.8\columnwidth]{figs/After_audiofilter.png}
     \caption{Spectrogram of the audio file after Filtering}
     \label{fig:after_filter_plot}
 \end{figure}
@@ -222,32 +222,32 @@ a^nu(n) \system{Z} \frac{1}{1-az^{-1}} \quad \abs{z} > \abs{a}
 \item 
 Let
 \begin{equation}
-	H\brak{e^{j \omega}} = H\brak{z = e^{j \omega}}.
+H\brak{e^{\j \omega}} = H\brak{z = e^{\j \omega}}.
 \end{equation}
-Plot $\abs{H\brak{e^{j \omega}}}$.  Comment.  $H(e^{j \omega})$ is
+Plot $\abs{H\brak{e^{\j \omega}}}$.  Comment.  $H(e^{\j \omega})$ is
 known as the {\em Discret Time Fourier Transform} (DTFT) of $x(n)$.
 \\
 \solution The following code plots the magnitude of transfer function.
 \begin{lstlisting}
 https://github.com/dhanushnayakh03/EE1205/tree/main/Audio_%20Filter/codes/3.5.py
 \end{lstlisting}
-Substituting $z = e^{j \omega}$ in \eqref{eq:freq_resp}, we get
+Substituting $z = e^{\j \omega}$ in \eqref{eq:freq_resp}, we get
 \begin{align}
-	\left|H\brak{e^{j\omega}}\right| &= \left|\frac{1 + e^{-2j\omega}}{1 + \frac{1}{2}e^{-j\omega}}\right| \\
+	\left|H\brak{e^{\j\omega}}\right| &= \left|\frac{1 + e^{-2\j\omega}}{1 + \frac{1}{2}e^{-\j\omega}}\right| \\
 									  &= \sqrt{\frac{\brak{1 + \cos{2\omega}}^2 + \brak{\sin{2\omega}}^2}{\brak{1 + \frac{1}{2}\cos{\omega}}^2 + \brak{\frac{1}{2}\sin{\omega}}^2}}\\
 									  &= \frac{4|\cos{\omega}|}{\sqrt{5 + 4\cos{\omega}}}
 \end{align}
 \begin{align}
-	\left|H\brak{e^{j\brak{\omega + 2\pi}}}\right| &= \frac{4|\cos\brak{\omega + 2\pi}|}{\sqrt{5 + 4\cos\brak{\omega + 2\pi}}} \\
+	\left|H\brak{e^{\j\brak{\omega + 2\pi}}}\right| &= \frac{4|\cos\brak{\omega + 2\pi}|}{\sqrt{5 + 4\cos\brak{\omega + 2\pi}}} \\
 											   &= \frac{4|\cos{\omega}|}{\sqrt{5 + 4\cos{\omega}}} \\
-											   &= \left|H\brak{e^{j\omega}}\right|	
+											   &= \left|H\brak{e^{\j\omega}}\right|	
 \end{align}
 Therefore its fundamental period is $2\pi$ , which verifies that DTFT of a signal is always periodic.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\columnwidth]{figs/H(z)_3.5.png}
-\caption{$\abs{H\brak{e^{j\omega}}}$}
+\caption{$\abs{H\brak{e^{\j\omega}}}$}
 \label{fig:H(z)_3.5}
 \end{figure}
 \end{enumerate}
@@ -290,16 +290,16 @@ https://github.com/dhanushnayakh03/EE1205/tree/main/Audio_%20Filter/codes/4.2.py
 \end{equation}
 Is the system defined by \eqref{prob:2.2} stable for the impulse response in \eqref{eq:impulse_resp}?\\
 \solution For stable system \eqref{eq:stabilty_condn} should converge.\\
-By using ratio test for convergence:
+By using ratio test
 \begin{align}
-    \lim_{n \to \infty}\left|\frac{h(n + 1)}{h(n)}\right|&<1 \\
+    \lim_{n \to \infty}\left|\frac{h(n + 1)}{h(n)}\right|&<\infty\\
 \end{align}
 For large $n$ 
 \begin{align}
     u\brak{n}=u\brak{n-2}=1
 \end{align}
 \begin{align}
-  \lim_{n \to \infty}  \brak{\frac{h(n + 1)}{h(n)}} = 1/2 <1
+  \lim_{n \to \infty}  \brak{\frac{h(n + 1)}{h(n)}} = 1/2 <\infty
 \end{align}
 Hence it is stable.
 \item 
@@ -396,7 +396,7 @@ https://github.com/dhanushnayakh03/EE1205/tree/main/Audio_%20Filter/codes/5_sol.
 \begin{lstlisting}
 https://github.com/dhanushnayakh03/EE1205/tree/main/Audio_%20Filter/codes/5.4.py   
 \end{lstlisting}
-This code verifies the result by plotting the obtained result with the result obtained by DFT.
+This code verifies the result by plotting the obtained result with the result obtained by IDFT.
 \begin{figure}[H]
 \centering
 \includegraphics[width=\columnwidth]{figs/yn_verf_5.4.png}
@@ -434,9 +434,11 @@ where $\omega=e^{-\frac{j2\pi}{N}}$ . Now any DFT equation can be written as
 \end{align}
 Thus we can rewrite  \eqref{eq:fp} as:
 \begin{align}
-	\mtx{Y} = \mtx{X}\cdot\mtx{H} = \brak{\mtx{W}\mtx{x}}\cdot\brak{\mtx{W}\mtx{h}}
+	\mtx{Y} = \mtx{X}\odot\mtx{H} = \brak{\mtx{W}\mtx{x}}\odot\brak{\mtx{W}\mtx{h}}
 \end{align}
+where the $\odot$ represents the Hadamard product which performs element-wise multiplication.
 \end{enumerate}
+
 The below code computes $y\brak{n}$ by DFT Matrix and then plots it.
 \begin{lstlisting}
 https://github.com/dhanushnayakh03/EE1205/tree/main/Audio_%20Filter/codes/5.5.py
@@ -479,6 +481,10 @@ https://github.com/dhanushnayakh03/EE1205/tree/main/Audio_%20Filter/codes/6.1.py
 \caption{Both the outputs using and without using function overlap}
 \label{fig:6.1}
 \end{figure}
+
+
+
+
 
 \item Repeat all the exercises in the previous sections for the above $a$ and $b$.\\
 \solution The code in \ref{prob:audio_filter_problem} generates the values of $a$ and $b$  which can be used to generate a difference equation.\\
@@ -524,12 +530,7 @@ The below code computes the values of $r\brak{i},p\brak{i} , k\brak{i}$ and plot
 https://github.com/dhanushnayakh03/EE1205/tree/main/Audio_%20Filter/codes/6.2.py
 \end{lstlisting}
 \input{tables/audio_filter_tab}
-\begin{figure}[H]
-\centering
-\includegraphics[width=\columnwidth]{figs/h(n)_6.2.png}
-\caption{h(n) of Audio Filter}
-\label{fig:6.2_hn}
-\end{figure}
+
 \textbf{Stability of h(n)}:\\
 According to \eqref{eq:stabilty_condn}
 \begin{align}
@@ -543,11 +544,79 @@ https://github.com/dhanushnayakh03/EE1205/tree/main/Audio_%20Filter/codes/6_filt
 \end{lstlisting}
 \begin{figure}[H]
 \centering
-\includegraphics[width=\columnwidth]{figs/Filter_Response.png}
+\includegraphics[width=1\columnwidth]{figs/Filter_Response.png}
 \caption{Frequency Response of Audio Filter}
 \label{fig:H(w)_6}
 \end{figure}
+The below code plots the Butterworth Filter in analog domain by using bilinear transform.
+\begin{align}
+    z=\frac{1+sT/2}{1-sT/2}
+\end{align}
+\begin{lstlisting}
+https://github.com/dhanushnayakh03/EE1205/tree/main/Audio_%20Filter/codes/analog_filt.py
+\end{lstlisting}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\columnwidth]{figs/Butterworth_analog.png}
+\caption{Butterworth Filter Frequency response in analog domain}
+\label{fig:H(w)_6}
+\end{figure}
 
+
+
+The below code plots the Pole-Zero Plot of the frequency response.
+\begin{lstlisting}
+https://github.com/dhanushnayakh03/EE1205/tree/main/Audio_%20Filter/codes/6.2_pole-zero.py
+\end{lstlisting}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\columnwidth]{figs/Pole_Zero_Plt.png}
+\caption{There are complex poles. So $h\brak{n}$ should be damped sinusoid.}
+\label{fig:pole_zero_6.2}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\columnwidth]{figs/h(n)_6.2.png}
+\caption{h(n) of Audio Filter.It is a damped sinusoid.}
+\label{fig:6.2_hn}
+\end{figure}
+
+
+\item Implement your own fft routine in C and call this fft in python.\\
+
+\solution The below C code computes FFT of a given sequence.
+\begin{lstlisting}
+https://github.com/dhanushnayakh03/EE1205/tree/main/Audio_%20Filter/codes/fft.c
+\end{lstlisting}
+The C function involved in computing the FFT is called in the below python code and the result is computed.\\
+
+Before executing the  python code. Execute the following command.
+\begin{lstlisting}
+gcc -shared -o fft.so -fPIC fft.c
+\end{lstlisting}
+
+\begin{lstlisting}
+https://github.com/dhanushnayakh03/EE1205/tree/main/Audio_%20Filter/codes/fft_python.py
+\end{lstlisting}
+
+\item Find the time complexities of computing y(n)
+using FFT/IFFT and convolution and Compare.\\
+\solution  The time required to compute y(n) using these two methods is calculated and the data is stored in a text file using the below C code.
+
+\begin{lstlisting}
+https://github.com/dhanushnayakh03/EE1205/tree/main/Audio_%20Filter/codes/6.4_time.c
+\end{lstlisting}
+The below python code extracts the data from these text files and plots Time vs $n$ for comparison.
+\begin{lstlisting}
+https://github.com/dhanushnayakh03/EE1205/tree/main/Audio_%20Filter/codes/6.4_plot.py
+\end{lstlisting}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\columnwidth]{figs/Time Complexity Comparision.png}
+\caption{The Complexity of FFT+IFFT method is $ O(nlogn)$ where as by convolution is $O(n^2)$}
+\label{fig:time_complexity}
+\end{figure}
 
 
 \item What is the sampling frequency of the input signal?\\
