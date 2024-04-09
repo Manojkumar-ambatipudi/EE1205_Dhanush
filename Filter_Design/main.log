@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.19)  8 APR 2024 17:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.19)  9 APR 2024 10:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1016,14 +1016,20 @@ LaTeX Font Info:    Trying to load font information for OT1+txr on input line 2
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
-) (./main.aux)
+) (./main.aux
+
+LaTeX Warning: Label `eq:h(n)desired_for_LPF' multiply defined.
+
+
+LaTeX Warning: Label `eq:h(n)desired_for_LPF' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 27.
 LaTeX Font Info:    Trying to load font information for OML+txmi on input line 
 27.
-
-(/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 27.
@@ -1179,11 +1185,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 141--142
  []
 
 [3]
-<figs/plot1.png, id=102, 526.96875pt x 395.22656pt>
+<figs/plot1.png, id=106, 462.528pt x 346.896pt>
 File: figs/plot1.png Graphic file (type png)
 <use figs/plot1.png>
 Package pdftex.def Info: figs/plot1.png  used on input line 149.
-(pdftex.def)             Requested size: 345.0pt x 258.76372pt.
+(pdftex.def)             Requested size: 345.0pt x 258.76335pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 154--155
 
@@ -1198,58 +1204,69 @@ Underfull \hbox (badness 10000) in paragraph at lines 170--172
 LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <10> not available
 (Font)              Font shape `OT1/txr/bx/n' tried instead on input line 16.
 )
-<figs/pole_zero_plt.png, id=115, 526.96875pt x 395.22656pt>
-File: figs/pole_zero_plt.png Graphic file (type png)
-<use figs/pole_zero_plt.png>
-Package pdftex.def Info: figs/pole_zero_plt.png  used on input line 190.
-(pdftex.def)             Requested size: 345.0pt x 258.76372pt.
+<figs/Pole_Zero_plt.png, id=121, 462.528pt x 346.896pt>
+File: figs/Pole_Zero_plt.png Graphic file (type png)
+<use figs/Pole_Zero_plt.png>
+Package pdftex.def Info: figs/Pole_Zero_plt.png  used on input line 190.
+(pdftex.def)             Requested size: 345.0pt x 258.76335pt.
  [5]
 Underfull \hbox (badness 10000) in paragraph at lines 198--200
 
  []
 
-<figs/Design_vs_Specif.png, id=131, 526.96875pt x 395.22656pt>
-File: figs/Design_vs_Specif.png Graphic file (type png)
-<use figs/Design_vs_Specif.png>
-Package pdftex.def Info: figs/Design_vs_Specif.png  used on input line 212.
-(pdftex.def)             Requested size: 345.0pt x 258.76372pt.
-[6 <./figs/pole_zero_plt.png>]
+<figs/Design_vs_Specification.png, id=137, 462.528pt x 346.896pt>
+File: figs/Design_vs_Specification.png Graphic file (type png)
+<use figs/Design_vs_Specification.png>
+Package pdftex.def Info: figs/Design_vs_Specification.png  used on input line 2
+12.
+(pdftex.def)             Requested size: 345.0pt x 258.76335pt.
+[6 <./figs/Pole_Zero_plt.png>]
 Overfull \hbox (68.7106pt too wide) detected at line 237
 []
  []
 
-[7 <./figs/Design_vs_Specif.png>]
-<figs/band_pass_filter.png, id=160, 526.96875pt x 395.22656pt>
-File: figs/band_pass_filter.png Graphic file (type png)
-<use figs/band_pass_filter.png>
-Package pdftex.def Info: figs/band_pass_filter.png  used on input line 244.
-(pdftex.def)             Requested size: 345.0pt x 258.76372pt.
+[7 <./figs/Design_vs_Specification.png>]
+<figs/Band_Pass_Filter.png, id=168, 462.528pt x 346.896pt>
+File: figs/Band_Pass_Filter.png Graphic file (type png)
+<use figs/Band_Pass_Filter.png>
+Package pdftex.def Info: figs/Band_Pass_Filter.png  used on input line 244.
+(pdftex.def)             Requested size: 345.0pt x 258.76335pt.
 
 Overfull \hbox (129.8489pt too wide) detected at line 258
 []
  []
 
-[8 <./figs/band_pass_filter.png>]
-<figs/LPF_FIR.png, id=171, 722.7pt x 433.62pt>
+[8 <./figs/Band_Pass_Filter.png>]
+<figs/LPF_FIR.png, id=180, 722.7pt x 433.62pt>
 File: figs/LPF_FIR.png Graphic file (type png)
 <use figs/LPF_FIR.png>
 Package pdftex.def Info: figs/LPF_FIR.png  used on input line 275.
 (pdftex.def)             Requested size: 345.0pt x 206.9972pt.
  [9 <./figs/LPF_FIR.png>]
-<figs/Kaiser_LPF.png, id=183, 526.96875pt x 395.22656pt>
-File: figs/Kaiser_LPF.png Graphic file (type png)
-<use figs/Kaiser_LPF.png>
-Package pdftex.def Info: figs/Kaiser_LPF.png  used on input line 338.
-(pdftex.def)             Requested size: 345.0pt x 258.76372pt.
- [10] [11 <./figs/Kaiser_LPF.png (PNG copy)>] (./main.aux)
+<figs/FIR_Low_Filter.png, id=191, 462.528pt x 346.896pt>
+File: figs/FIR_Low_Filter.png Graphic file (type png)
+<use figs/FIR_Low_Filter.png>
+Package pdftex.def Info: figs/FIR_Low_Filter.png  used on input line 338.
+(pdftex.def)             Requested size: 345.0pt x 258.76335pt.
+ [10]
+<figs/FIR_Bandpass_Filter.png, id=205, 462.528pt x 346.896pt>
+File: figs/FIR_Bandpass_Filter.png Graphic file (type png)
+<use figs/FIR_Bandpass_Filter.png>
+Package pdftex.def Info: figs/FIR_Bandpass_Filter.png  used on input line 368.
+(pdftex.def)             Requested size: 345.0pt x 258.76335pt.
+ [11 <./figs/FIR_Low_Filter.png>] [12 <./figs/FIR_Bandpass_Filter.png>] (./main
+.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7610B52E0558E2489AFC1073AA348570;1492.
+(rerunfilecheck)             Checksum: C2D8058AB543BC3B30F82EC98E695026;1717.
  ) 
 Here is how much of TeX's memory you used:
- 42404 strings out of 478287
- 981553 string characters out of 5849289
- 1493459 words of memory out of 5000000
- 59813 multiletter control sequences out of 15000+600000
+ 42421 strings out of 478287
+ 981998 string characters out of 5849289
+ 1493601 words of memory out of 5000000
+ 59822 multiletter control sequences out of 15000+600000
  508125 words of font info for 120 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  115i,21n,118p,424b,1180s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1261,10 +1278,10 @@ onts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyc.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (11 pages, 232425 bytes).
+Output written on main.pdf (12 pages, 281996 bytes).
 PDF statistics:
- 262 PDF objects out of 1000 (max. 8388607)
- 222 compressed objects within 3 object streams
- 98 named destinations out of 1000 (max. 500000)
- 123 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 283 PDF objects out of 1000 (max. 8388607)
+ 235 compressed objects within 3 object streams
+ 105 named destinations out of 1000 (max. 500000)
+ 136 words of extra memory for PDF output out of 10000 (max. 10000000)
 
