@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.19)  9 APR 2024 10:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.19)  10 APR 2024 09:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1237,25 +1237,29 @@ Overfull \hbox (129.8489pt too wide) detected at line 258
  []
 
 [8 <./figs/Band_Pass_Filter.png>]
-<figs/LPF_FIR.png, id=180, 722.7pt x 433.62pt>
+<figs/Digital_BPF.png, id=180, 462.528pt x 346.896pt>
+File: figs/Digital_BPF.png Graphic file (type png)
+<use figs/Digital_BPF.png>
+Package pdftex.def Info: figs/Digital_BPF.png  used on input line 263.
+(pdftex.def)             Requested size: 345.0pt x 258.76335pt.
+<figs/LPF_FIR.png, id=181, 722.7pt x 433.62pt>
 File: figs/LPF_FIR.png Graphic file (type png)
 <use figs/LPF_FIR.png>
-Package pdftex.def Info: figs/LPF_FIR.png  used on input line 275.
+Package pdftex.def Info: figs/LPF_FIR.png  used on input line 281.
 (pdftex.def)             Requested size: 345.0pt x 206.9972pt.
- [9 <./figs/LPF_FIR.png>]
-<figs/FIR_Low_Filter.png, id=191, 462.528pt x 346.896pt>
+ [9 <./figs/Digital_BPF.png>] [10 <./figs/LPF_FIR.png>]
+<figs/FIR_Low_Filter.png, id=202, 462.528pt x 346.896pt>
 File: figs/FIR_Low_Filter.png Graphic file (type png)
 <use figs/FIR_Low_Filter.png>
-Package pdftex.def Info: figs/FIR_Low_Filter.png  used on input line 338.
+Package pdftex.def Info: figs/FIR_Low_Filter.png  used on input line 344.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
- [10]
-<figs/FIR_Bandpass_Filter.png, id=205, 462.528pt x 346.896pt>
+ [11 <./figs/FIR_Low_Filter.png>]
+<figs/FIR_Bandpass_Filter.png, id=214, 462.528pt x 346.896pt>
 File: figs/FIR_Bandpass_Filter.png Graphic file (type png)
 <use figs/FIR_Bandpass_Filter.png>
-Package pdftex.def Info: figs/FIR_Bandpass_Filter.png  used on input line 368.
+Package pdftex.def Info: figs/FIR_Bandpass_Filter.png  used on input line 374.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
- [11 <./figs/FIR_Low_Filter.png>] [12 <./figs/FIR_Bandpass_Filter.png>] (./main
-.aux)
+ [12 <./figs/FIR_Bandpass_Filter.png>] (./main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1263,10 +1267,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: C2D8058AB543BC3B30F82EC98E695026;1717.
  ) 
 Here is how much of TeX's memory you used:
- 42421 strings out of 478287
- 981998 string characters out of 5849289
- 1493601 words of memory out of 5000000
- 59822 multiletter control sequences out of 15000+600000
+ 42429 strings out of 478287
+ 982165 string characters out of 5849289
+ 1493698 words of memory out of 5000000
+ 59828 multiletter control sequences out of 15000+600000
  508125 words of font info for 120 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  115i,21n,118p,424b,1180s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1278,10 +1282,10 @@ onts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyc.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (12 pages, 281996 bytes).
+Output written on main.pdf (12 pages, 311708 bytes).
 PDF statistics:
- 283 PDF objects out of 1000 (max. 8388607)
- 235 compressed objects within 3 object streams
- 105 named destinations out of 1000 (max. 500000)
- 136 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 286 PDF objects out of 1000 (max. 8388607)
+ 236 compressed objects within 3 object streams
+ 106 named destinations out of 1000 (max. 500000)
+ 141 words of extra memory for PDF output out of 10000 (max. 10000000)
 

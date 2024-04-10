@@ -1,31 +1,24 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Define the piecewise function h_BP(n)
-def h_BP(n):
-    if n == 0:
-        return 0.025 / np.pi
-    elif -48 <= n <= 48:
-        return (2 * np.cos(0.365 * n * np.pi) * np.sin(0.025 * n * np.pi)) / (n * np.pi)
-    else:
-        return 0
+# Define the range of 'n'
+n = np.arange(-1000, 1001)
 
-# Generate values for n
-n_values = np.arange(-480, 491)
+# Calculate the values of h_lp(n)
+h_lp = np.where((n != 0) & (n >= -100) & (n <= 100), 2 * np.sin(n * np.pi / 40) * np.cos(n * 0.365 * np.pi) / (n * np.pi), 0)
 
-# Calculate h_BP values for each n
-h_values = np.array([h_BP(n) for n in n_values])
+# Compute the Discrete Fourier Transform (DFT) of h_lp(n)
+h_lp_fft = np.fft.fftshift(np.fft.fft(h_lp))
 
-# Calculate the DTFT using numpy's FFT
-H_freq_response = np.fft.fftshift(np.fft.fft(h_values))
+# Define the frequency axis with respect to omega/pi
+N = len(n)
+freq = np.fft.fftshift(np.fft.fftfreq(N)) * 2 * np.pi
 
-# Angular frequency axis (normalized)
-omega_normalized = np.linspace(-np.pi, np.pi, len(n_values))
-
-# Plotting
-plt.plot(omega_normalized/np.pi, np.abs(H_freq_response))
-plt.xlabel('($\omega$/pi)')
-plt.ylabel('|H($\omega$)|')
-plt.title('FIR BAND PASS FILTER')
+# Plot the frequency spectrum for w/pi between -0.3 and 0.3
+plt.plot(freq / np.pi, np.abs(h_lp_fft))
+plt.xlabel('$\omega/\pi$')
+plt.ylabel('$|H_{bp}(\omega)|$')
+plt.title("FIR BAND PASS FILTER")
+plt.xlim(-0.7, 0.7)
 plt.grid(True)
 plt.savefig("FIR_Bandpass_Filter.png")

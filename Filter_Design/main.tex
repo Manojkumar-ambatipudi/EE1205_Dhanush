@@ -258,6 +258,12 @@ Substituting $s=\frac{1-z^{-1}}{1+z^{-1}}$ in \eqref{eq:magnitude_bandpass_sdom}
 \end{align}
 
 where $G=6.49\times 10^{-5}$    
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\columnwidth]{figs/Digital_BPF.png}
+\caption{Digital Specifications are met. Passband and stopband frequencies are same}
+\label{fig:Digital_BPF}
+\end{figure}
 
 \section{The FIR Filter}
 We design the FIR filter by first obtaining the (non-causal) lowpass equivalent using the Kaiser window
@@ -360,7 +366,7 @@ Multipying by window function we get :
 \begin{cases} 
    \frac{2\cos{\brak{0.365n\pi}}\sin{\brak{0.025n\pi}}}{n\pi},  & \text{for } -48\leq n \leq 48 \\
     0 &\text{otherwise}
-\end{cases} \label{eq:h(n)desired_for_BPF}
+\end{cases} \label{eq:h(n)desired_for_LPF}
 \end{align}
 
 \begin{figure}[H]
