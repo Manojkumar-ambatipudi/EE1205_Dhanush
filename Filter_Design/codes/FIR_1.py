@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from scipy import signal
 
 # Define the cutoff frequency
-wc = 0.0553 * np.pi
+wc = 0.025 * np.pi
 
 # Create a frequency vector
 w = np.linspace(-np.pi, np.pi, 1000)
